@@ -14,6 +14,7 @@ namespace Lights_Out.ViewModel
         private Livello livAttuale;
         private Livello successivo;
         private Cella cellaAttuale;
+        private int mosse;
 
 
 
@@ -22,6 +23,7 @@ namespace Lights_Out.ViewModel
             livAttuale=new Livello(i);
             successivo = new Livello(i+1);
             celle=livAttuale.Scacchiera;
+            mosse = 0;
         }
 
         public ObservableCollection<Cella> Celle {
@@ -35,8 +37,31 @@ namespace Lights_Out.ViewModel
                 return cellaAttuale;
             }
             set {
-                cellaAttuale = value;
-                livAttuale.Mossa(cellaAttuale);
+                this.cellaAttuale = value;
+                this.livAttuale.Mossa(cellaAttuale);
+                this.Mosse = 1;
+            }
+        }
+
+        public int Mosse
+        {
+            get
+            {
+                return mosse;
+            }
+            set
+            {
+                if (value == 1)
+                {
+                    mosse++;
+                    RaisePropertyChanged("Mosse");
+                }
+            }
+        }
+
+        public Livello LivAttuale {
+            get {
+                return livAttuale;
             }
         }
 

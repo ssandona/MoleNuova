@@ -26,8 +26,13 @@ namespace Lights_Out
             string liv = string.Empty;
             if (NavigationContext.QueryString.TryGetValue("id", out liv))
             {
+<<<<<<< HEAD
+                b00.Content = liv;
+                int a = Convert.ToInt32(liv);
+=======
                 int a = Convert.ToInt32(liv);
                 this.DataContext = new LivelloVM(a);
+>>>>>>> Button game.xaml
             }
         }
     }

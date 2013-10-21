@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+﻿using Lights_Out;
+=======
 ﻿using Lights_Out.Model;
+>>>>>>> Button game.xaml
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -10,11 +15,35 @@ using System.Text;
 
 namespace PhoneApp1
 {
+<<<<<<< HEAD
+    
+    public class Livello/*: INotifyPropertyChanged*/
+    {
+        //private bool[,] scacchiera;
+
+
+      private ObservableCollection<Boolean> scacchiera;
+        /*
+        for(qualcosa)
+            scacchiera.add(new Cella(indice_x, indice_y));
+         * /*
+        ...
+        scacchiera[0][0].setState("talpa fuori");
+
+        ecc...
+       
+       la cella avrà un get sfondo per il binding....questa è l'idea che vorremo fare*/
+
+
+        //variabile per le mosse effettuate fino ad ora
+        private int mosse=0;
+=======
     [DataContract] 
     public class Livello: INotifyPropertyChanged
     {
       private ObservableCollection<Cella> celle;
 
+>>>>>>> Button game.xaml
 
         //variabile per il best score del livello, se diverso da 0 significa che il livello è passato 
         private int best_score;
@@ -22,6 +51,45 @@ namespace PhoneApp1
         private bool avaiable;
 
 
+<<<<<<< HEAD
+        public Livello(int id)
+        {
+            scacchiera = new ObservableCollection<Boolean>();
+            //best_score = serializzazione in base a come era prima 
+            //Inizializzo tutte le luci come accese
+            for (int i = 0; i < 25; i++)
+            {
+                if (i % 2 == 0)
+                    scacchiera.Add(true);
+                else scacchiera.Add(false);
+            }
+
+            /*
+             * //Costrutto di deserializzazione
+            try
+            {
+                MemoryStream ms = new MemoryStream();
+                DataContractSerializationHelper.Serialize(ms, new Livello(id));
+                ms.Position = 0;
+                var sampleData = DataContractSerializationHelper.Deserialize(ms, typeof(Livello));
+                ms.Close();
+            }
+            catch
+            {
+                throw new Exception("Livello inesistente");
+            }
+            */
+
+        }//end of Scacchiera(livello) Constructor
+        /*
+        public event PropertyChangedEventHandler PropertyChange;
+        private void NotifyPropertyChanged(string PropName) { 
+        
+        if(PropertyChange!=null)
+            
+        }
+        */
+=======
         /// <summary>
         /// Costruisce una scacchiera 5x5. Se una luce è accesa allora è true, false altrimenti.
         ///Si vince quando tutte le luci sono spente.
@@ -79,7 +147,7 @@ namespace PhoneApp1
             }
         }
 
-        [DataMember] 
+       
         public int Id
         {
             get
@@ -91,52 +159,66 @@ namespace PhoneApp1
         public void Mossa(Cella a) {
 
             int id = a.Id;
-            if (id % 5 == 0)
+            if (id%5 == 0) //prima colonna
             {
-                if (id < 5)
+                if (id ==0)
                 {
-                    celle[id + 1].Stato = true;
-                    celle[id + 5].Stato = true;
+                    celle[1].Stato = true;
+                    celle[5].Stato = true;
                 }
-                else if (id > 19)
+                else if (id==20)
                 {
-                    celle[id - 5].Stato = true;
-                    celle[id + 1].Stato = true;
+                    celle[15].Stato = true;
+                    celle[21].Stato = true;
                 }
                 else
                 {
-                    celle[id + 1].Stato = true;
-                    celle[id - 5].Stato = true;
-                    celle[id + 5].Stato = true;
+                    celle[id+1].Stato = true;
+                    celle[id-5].Stato = true;
+                    celle[id+5].Stato = true;
                 }
             }
-            else if (id % 5 == 4)
+            else if (id % 5 == 4) //ultima colonna
             {
-                if (id < 5)
+                if (id==4)
                 {
-                    celle[id - 1].Stato = true;
-                    celle[id + 5].Stato = true;
+                    celle[3].Stato = true;
+                    celle[9].Stato = true;
                 }
-                else if (id > 19)
+                else if (id==24)
                 {
-                    celle[id - 1].Stato = true;
-                    celle[id - 5].Stato = true;
+                    celle[23].Stato = true;
+                    celle[19].Stato = true;
                 }
                 else
                 {
-                    celle[id - 1].Stato = true;
-                    celle[id - 5].Stato = true;
-                    celle[id + 5].Stato = true;
+                    celle[id-1].Stato = true;
+                    celle[id-5].Stato = true;
+                    celle[id+5].Stato = true;
                 }
             }
-            else {
+            else if (id < 5)
+            {
+                celle[id-1].Stato = true;
+                celle[id+1].Stato = true;
+                celle[id+5].Stato = true;
+            }
+            else if(id>19){ 
                 celle[id - 1].Stato = true;
                 celle[id + 1].Stato = true;
                 celle[id - 5].Stato = true;
-                celle[id + 5].Stato = true;
             }
+            else {
+            celle[id - 1].Stato = true;
+                celle[id + 1].Stato = true;
+                celle[id - 5].Stato = true;
+                celle[id+5].Stato = true;
+            
+            }
+            celle[id].Stato = true;
                           
         }
+>>>>>>> Button game.xaml
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -146,6 +228,8 @@ namespace PhoneApp1
         }
 
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -158,6 +242,7 @@ namespace PhoneApp1
         /// <param name="y">Ordinata  della mossa fatta, da 0 a 4</param>
         /// <returns>Un booleano che decreta se hai vinto o meno</returns>
         /*
+>>>>>>> Button game.xaml
         public bool Mossa(int x, int y)
         {
             //aumenta il contatore delle mosse effettuate
@@ -165,6 +250,7 @@ namespace PhoneApp1
 
 
             //sistema le tre caselle orizzontali
+            /*
             switch (x)
             {
                 case 0:
@@ -211,19 +297,28 @@ namespace PhoneApp1
                         break;
                     }//end of case 1<y<5
             }//end of switch
+<<<<<<< HEAD
+            */
+            /* Controlla se esiste almeno una luce accesa e in tal caso dì che non hai ancora vinto (false) */
+            for (int i = 0; i < 25; i++)
+=======
         
             //Controlla se esiste almeno una luce accesa e in tal caso dì che non hai ancora vinto (false) 
             for (int i = 0; i < 5; i++)
+>>>>>>> Button game.xaml
             {
-                for (int j = 0; j < 5; j++)
-                {
-                    if (scacchiera[i, j] == true) return false;
-                }
+                    if (scacchiera[i] == true) return false;
+               
             }//end of nested for
 
 
 
+<<<<<<< HEAD
+            /* Altrimenti ritorna che hai vinto (true!) */
+            salva_score();
+=======
             Altrimenti ritorna che hai vinto (true!) 
+>>>>>>> Button game.xaml
             return true;
         }
 */

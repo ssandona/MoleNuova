@@ -12,11 +12,25 @@ namespace Lights_Out.Model
     {
         private int id;
         private bool stato;
+        public string sfondo;
 
         public Cella(int cod, bool st) {
             stato = st;
+            if (st == true)
+                sfondo = "Images/mole_in.jpg";
+            else
+                sfondo = "Images/mole_out.jpg";
+
             id = cod;
         }
+
+        public string Sfondo {
+
+            get { return this.sfondo; }
+
+            
+        }
+
 
 
         public int Id {
@@ -38,14 +52,18 @@ namespace Lights_Out.Model
                 {
                     if (stato == false)
                     {
-                        stato = value;
+                        stato = true;
+                        sfondo = "Images/mole_in.jpg";
                         RaisePropertyChanged("Stato");
+                        RaisePropertyChanged("Sfondo");
 
                     }
                     else
                     {
-                        stato = value;
+                        stato = false;
+                        sfondo = "Images/mole_out.jpg";
                         RaisePropertyChanged("Stato");
+                        RaisePropertyChanged("Sfondo");
 
                     }
                 }
