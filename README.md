@@ -3,7 +3,7 @@
 
 MoleOut! aka aetalpe
 
-il nuovo gioco che rivoluzionerà la concezione di divertimento... 
+il nuovo gioco che rivoluzionerà la concezione di divertimento.....
 
 
        |:|  |:|   /:::\   |:|  |:|      |_ | |  |_
