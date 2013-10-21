@@ -1,0 +1,164 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Lights_Out.Game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="GridPlay" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel1" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle1" Text="MOLE OUT" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <Grid x:Name="Liv">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" x:Name="PageTitle1" Text="livello" 
+                       FontFamily="Comic Sans MS"
+                       FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
+                <TextBlock x:Name="id" Grid.Column="1" Text="{Binding Cod}" 
+                       FontFamily="Comic Sans MS"
+                       FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
+
+            </Grid>
+            
+                       <!--Style="{StaticResource PhoneTextTitle1Style}"/> -->
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListBox ItemsSource="{Binding ListaCelleAttuale}" SelectedItem="{Binding Mossa, Mode=TwoWay}" Height="100">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Cella:"/>
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text="Stato:" />
+                            <TextBlock Text="{Binding Stato}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <!--<Grid x:Name="ContentPanel1" Margin="0" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Button Name="b00" Margin="-7" BorderThickness="0" Background="BlueViolet" Grid.Row="0" Grid.Column="0" />
+            <Button Name="b01" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="0" Grid.Column="1" />
+            <Button Name="b02" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="0" Grid.Column="2" />
+            <Button Name="b03" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="0" Grid.Column="3" />
+            <Button Name="b04" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="0" Grid.Column="4" />
+            <Button Name="b10" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="1" Grid.Column="0" />
+            <Button Name="b11" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="1" Grid.Column="1" />
+            <Button Name="b12" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="1" Grid.Column="2" />
+            <Button Name="b13" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="1" Grid.Column="3" />
+            <Button Name="b14" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="1" Grid.Column="4" />
+            <Button Name="b20" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="2" Grid.Column="0" />
+            <Button Name="b21" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="2" Grid.Column="1" />
+            <Button Name="b22" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="2" Grid.Column="2" />
+            <Button Name="b23" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="2" Grid.Column="3" />
+            <Button Name="b24" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="2" Grid.Column="4" />
+            <Button Name="b30" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="0" />
+            <Button Name="b31" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="1" />
+            <Button Name="b32" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="2" />
+            <Button Name="b33" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="3" />
+            <Button Name="b34" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="4" />
+            <Button Name="b40" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="4" Grid.Column="0" />
+            <Button Name="b41" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="4" Grid.Column="1" />
+            <Button Name="b42" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="4" Grid.Column="2" />
+            <Button Name="b43" Margin="-7" BorderThickness="0" Background="BlueViolet"  Grid.Row="4" Grid.Column="3" />
+            //<Button Name="b44" BorderThickness="0" Background="BlueViolet"  Grid.Row="4" Grid.Column="4" />
+
+
+            <Button  Grid.Row="4" Grid.Column="4" BorderThickness="0" Margin="-7" >
+                <Button.Background>
+                   <ImageBrush ImageSource="/Images/mole_out.jpg" />  
+                </Button.Background>
+            </Button>
+            
+        </Grid>-->
+
+        <Grid x:Name="Mosse" Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock HorizontalAlignment="Right" 
+                       VerticalAlignment="Center" 
+                       Text="mosse" 
+                       Grid.Column="0" 
+                       Grid.Row="0" 
+                       FontSize="{StaticResource PhoneFontSizeLarge}"
+                       FontFamily="Comic Sans MS"/>
+           
+            <TextBlock Name="num_mosse" 
+                       HorizontalAlignment="Center" 
+                       Text="{Binding Mosse}" 
+                       Grid.Column="1" 
+                       Grid.Row="0" 
+                       FontSize="{StaticResource PhoneFontSizeExtraLarge}"
+                       FontFamily="Comic Sans MS"/>
+            
+            <TextBlock HorizontalAlignment="Right" 
+                       VerticalAlignment="Center" 
+                       Text="best score" 
+                       Grid.Column="0" 
+                       Grid.Row="1" 
+                       FontSize="{StaticResource PhoneFontSizeLarge}"
+                       FontFamily="Comic Sans MS"/>
+            
+            <TextBlock Name="best_score" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Text="{Binding Best_Score}" 
+                       Grid.Column="1" 
+                       Grid.Row="1" 
+                       FontSize="{StaticResource PhoneFontSizeLarge}"
+                       FontFamily="Comic Sans MS"/>
+
+        </Grid>
+
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
