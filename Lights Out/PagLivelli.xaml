@@ -16,12 +16,10 @@
     <!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-<<<<<<< HEAD
-=======
-            <RowDefinition Height="*"/>
->>>>>>> Button game.xaml
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
@@ -29,12 +27,11 @@
             <TextBlock Text="APPLICAZIONE" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Livelli" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-<<<<<<< HEAD
+
 
         <!--ContentPanel - inserire ulteriore contenuto qui-->
 
         <Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
-=======
         <!--<StackPanel Grid.Row="1">-->
             
             <!--ContentPanel - inserire ulteriore contenuto qui-->
@@ -98,11 +95,12 @@
             <Button Name="b14" Content="13" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="1" Click="Inizia_livello" />
             <Button Name="b15" Content="14" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="2" Click="Inizia_livello" />
             <Button Name="b16" Content="15" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="3" Click="Inizia_livello" />
-<<<<<<< HEAD
-        </Grid>
-=======
+
         </Grid>-->
->>>>>>> Button game.xaml
+            
+
+        </Grid>
+
     </Grid>
 
 
