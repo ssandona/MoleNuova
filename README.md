@@ -1,11 +1,11 @@
-MoleOut
+﻿MoleOut
 =======
 
 MoleOut! aka aetalpe
 
 il nuovo gioco che rivoluzionerà la concezione di divertimento... 
 
- _    _     ___     _    _        _       _
+
        |:|  |:|   /:::\   |:|  |:|      |_ | |  |_
        |:|  |:|  /:/'\:\  |:|  |:|      |  | |_ |_
        |:|__|:| |:|   |:| |:|__|:|           _  ___
