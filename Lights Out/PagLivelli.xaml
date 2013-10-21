@@ -18,10 +18,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-<<<<<<< HEAD
-=======
             <RowDefinition Height="*"/>
->>>>>>> Button game.xaml
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
@@ -29,21 +26,15 @@
             <TextBlock Text="APPLICAZIONE" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Livelli" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-<<<<<<< HEAD
-
-        <!--ContentPanel - inserire ulteriore contenuto qui-->
-
-        <Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
-=======
-        <!--<StackPanel Grid.Row="1">-->
+        <StackPanel Grid.Row="1">
             
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-            <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
+            <ListBox ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" Height="100">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                        <Button Content="{Binding Id}" Click="GoToGame"/>
+                            <Button Content="{Binding Id}" />
                             <!--<TextBlock Text="{Binding Id}" />
                             <TextBlock Text="Stato:" />
                             <TextBlock Text="{Binding Avaiable}" />-->
@@ -51,7 +42,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        <!--</StackPanel>-->
+        </StackPanel>
         <StackPanel Grid.Row="2">
             <Grid DataContext="ListaLiv">
                 <TextBlock Text="{Binding Id}" />
@@ -63,7 +54,6 @@
             
         </StackPanel>
         <!--<Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
->>>>>>> Button game.xaml
 
 
             <Grid.RowDefinitions>
@@ -98,11 +88,7 @@
             <Button Name="b14" Content="13" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="1" Click="Inizia_livello" />
             <Button Name="b15" Content="14" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="2" Click="Inizia_livello" />
             <Button Name="b16" Content="15" BorderThickness="0" Background="BlueViolet"  Grid.Row="3" Grid.Column="3" Click="Inizia_livello" />
-<<<<<<< HEAD
-        </Grid>
-=======
         </Grid>-->
->>>>>>> Button game.xaml
     </Grid>
 
 

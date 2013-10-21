@@ -13,10 +13,7 @@ using Microsoft.Phone.Controls;
 using System.IO;
 using System.Runtime.Serialization;
 using PhoneApp1;
-<<<<<<< HEAD
-=======
 using Lights_Out.ViewModel;
->>>>>>> Button game.xaml
 
 
 namespace Lights_Out
@@ -27,12 +24,8 @@ namespace Lights_Out
         public MainPage()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            Test();
-=======
             //Test();
             LivelliVM lvm = new LivelliVM();
->>>>>>> Button game.xaml
         }
 
 

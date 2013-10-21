@@ -32,7 +32,7 @@
                 <TextBlock Grid.Column="0" x:Name="PageTitle1" Text="livello" 
                        FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
-                <TextBlock x:Name="id" Grid.Column="1" Text="{Binding LivAttuale.Id}" 
+                <TextBlock x:Name="id" Grid.Column="1" Text="{Binding Cod}" 
                        FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 
@@ -41,19 +41,16 @@
                        <!--Style="{StaticResource PhoneTextTitle1Style}"/> -->
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <ListBox ItemsSource="{Binding Celle}" SelectedItem="{Binding CellaAttuale, Mode=TwoWay}" Height="Auto" Width="Auto">
+            <ListBox ItemsSource="{Binding ListaCelleAttuale}" SelectedItem="{Binding Mossa, Mode=TwoWay}" Height="100">
                 <ListBox.ItemTemplate>
-                    <DataTemplate >
-                        <!--<StackPanel Orientation="Horizontal">-->
-                       
-                            
-                            <Button Height="80" Width="80" >
-                                <Button.Background>
-                                    <ImageBrush ImageSource="{Binding Sfondo}" />
-                                </Button.Background>
-                            </Button>
-                        <!--  </StackPanel> -->
-        </DataTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Cella:"/>
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text="Stato:" />
+                            <TextBlock Text="{Binding Stato}" />
+                        </StackPanel>
+                    </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
 
