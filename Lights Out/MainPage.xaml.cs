@@ -24,8 +24,6 @@ namespace Lights_Out
         public MainPage()
         {
             InitializeComponent();
-            //Test();
-            LivelliVM lvm = new LivelliVM();
         }
 
 

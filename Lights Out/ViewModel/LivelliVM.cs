@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace Lights_Out.ViewModel
 {
@@ -16,9 +17,13 @@ namespace Lights_Out.ViewModel
 
         public LivelliVM() {
             listaLiv = new ObservableCollection<Livello>();
-            listaLiv.Add(new Livello(1));
-            listaLiv.Add(new Livello(2));
-            listaLiv.Add(new Livello(3));
+            Livello uno = new Livello(1);
+            Livello due = new Livello(2);
+            Livello tre = new Livello(3);
+
+            if (uno.isAvaiable()) { listaLiv.Add(uno); }
+            if (due.isAvaiable()) { listaLiv.Add(due); }
+            if (tre.isAvaiable()) { listaLiv.Add(tre); }
         }
 
 

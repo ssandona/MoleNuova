@@ -7,6 +7,7 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows;
 using System.Xml.Linq;
 
 
@@ -21,7 +22,6 @@ namespace PhoneApp1
         //variabile per il best score del livello, se diverso da 0 significa che il livello è passato 
         private string best_score;
         private int id;
-        private bool avaiable;
 
 
         /// <summary>
@@ -35,9 +35,6 @@ namespace PhoneApp1
         {
             celle = new ObservableCollection<Cella>();
             id = cod;
-            if (cod != 1)
-                avaiable = false;
-            else avaiable = true;
             //mosse = 0; all'inizio
             //best_score = serializzazione in base a come era prima 
             //scacchiera = new bool[5, 5];
@@ -89,15 +86,18 @@ namespace PhoneApp1
 
         }
 
-        public bool Avaiable {
-            get {
-                return (avaiable);
-            }
-            set {
-                if (value != avaiable)
-                    avaiable = value;
-            }
-        }
+        public bool isAvaiable() {
+                /*Controlla se il livello precedente è stato vinto*/
+                    int livelloprecedente = (Convert.ToInt32(id))-1;
+                    if (livelloprecedente == 0) { return true; }
+                    if (appSettings.Contains("bestscore" + livelloprecedente))
+                    {
+                        string content = appSettings["bestscore" + livelloprecedente].ToString();
+                        if (content == "-") return false; /*Non è stato vinto*/
+                        else return true;
+                    }
+                    else return false;
+                }
 
        
         public int Id
