@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace Lights_Out
 {
-    public partial class Info : PhoneApplicationPage
+    public partial class info : PhoneApplicationPage
     {
-        public Info()
+        public info()
         {
             InitializeComponent();
         }
