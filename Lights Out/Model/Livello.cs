@@ -235,7 +235,7 @@ namespace PhoneApp1
                       where query.Element("id").Value == livello
                       select query.Element("configurazione").Value;
             return pos.First();
-        }/*Fine del codice da usare*/
+        }
 
 
 
