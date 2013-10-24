@@ -32,19 +32,10 @@ namespace Lights_Out
             NavigationService.Navigate(new Uri("/PagLivelli.xaml", UriKind.Relative));
         }
 
-       
 
-        public static void Test()
+        private void Informazioni_Click(object sender, RoutedEventArgs e)
         {
-            // serialization
-            MemoryStream ms = new MemoryStream();
-            DataContractSerializationHelper.Serialize(ms, new Livello(1));
-            /*
-            ms.Position = 0;
-            // deserialization
-            var sampleData = DataContractSerializationHelper.Deserialize(ms, typeof(Livello));
-            */
-            ms.Close();
+            NavigationService.Navigate(new Uri("/info.xaml", UriKind.Relative));
         }
     }
 
