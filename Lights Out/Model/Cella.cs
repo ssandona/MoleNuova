@@ -25,32 +25,39 @@ namespace Lights_Out.Model
             }
         }
 
+        public string Sfondo
+        {
+            get
+            {
+                if (stato)
+                    return "Images/mole_out.png";
+                else return "Images/mole_in.png";
+
+            }
+        }
 
         public bool Stato
         {
             get
             {
                 return stato;
-            }
-            set
-            {
-                if (value == true)
-                {
-                    if (stato == false)
-                    {
-                        stato = true;
-                        RaisePropertyChanged("Stato");
-
-                    }
-                    else
-                    {
-                        stato = false;
-                        RaisePropertyChanged("Stato");
-
-                    }
-                }
+                
             }
         }
+
+        public void changeState(){
+            if (stato == false){
+                stato = true;
+                RaisePropertyChanged("Stato");
+                RaisePropertyChanged("Sfondo");
+            }
+            else{
+                stato = false;
+                RaisePropertyChanged("Stato");
+                RaisePropertyChanged("Sfondo");
+                    }
+        }
+           
         public event PropertyChangedEventHandler PropertyChanged;
         public void RaisePropertyChanged(string PropName){
             if(PropertyChanged!=null)

@@ -99,6 +99,14 @@ namespace PhoneApp1
                     else return false;
                 }
 
+        public string Avaiable {
+            get {
+                if (isAvaiable())
+                    return "Images/unlocked_" + id + ".png";
+                else return "Images/locked_" + id + ".png";
+            }
+        }
+
        
         public int Id
         {
@@ -114,26 +122,26 @@ namespace PhoneApp1
             {
                 if (id ==0)
                 {
-                    celle[1].Stato = true;
+                    celle[1].changeState();
                     modify.Add(1);
-                    celle[5].Stato = true;
+                    celle[5].changeState();
                     modify.Add(5);
 
                 }
                 else if (id==20)
                 {
-                    celle[15].Stato = true;
+                    celle[15].changeState();
                     modify.Add(15);
-                    celle[21].Stato = true;
+                    celle[21].changeState();
                     modify.Add(21);
                 }
                 else
                 {
-                    celle[id+1].Stato = true;
+                    celle[id + 1].changeState();
                     modify.Add(id+1);
-                    celle[id-5].Stato = true;
+                    celle[id - 5].changeState();
                     modify.Add(id-5);
-                    celle[id+5].Stato = true;
+                    celle[id + 5].changeState();
                     modify.Add(id+5);
                 }
             }
@@ -141,64 +149,64 @@ namespace PhoneApp1
             {
                 if (id==4)
                 {
-                    celle[3].Stato = true;
+                    celle[3].changeState();
                     modify.Add(3);
-                    celle[9].Stato = true;
+                    celle[9].changeState();
                     modify.Add(9);
                 }
                 else if (id==24)
                 {
-                    celle[23].Stato = true;
+                    celle[23].changeState();
                     modify.Add(23);
-                    celle[19].Stato = true;
+                    celle[19].changeState();
                     modify.Add(19);
                 }
                 else
                 {
-                    celle[id-1].Stato = true;
+                    celle[id - 1].changeState();
                     modify.Add(id-1);
-                    celle[id-5].Stato = true;
+                    celle[id - 5].changeState();
                     modify.Add(id-5);
-                    celle[id+5].Stato = true;
+                    celle[id + 5].changeState();
                     modify.Add(id+5);
                 }
             }
             else if (id < 5)
             {
-                celle[id-1].Stato = true;
+                celle[id - 1].changeState();
                 modify.Add(id-1);
-                celle[id+1].Stato = true;
+                celle[id + 1].changeState();
                 modify.Add(id+1);
-                celle[id+5].Stato = true;
+                celle[id + 5].changeState();
                 modify.Add(id+5);
             }
-            else if(id>19){ 
-                celle[id-1].Stato = true;
+            else if(id>19){
+                celle[id - 1].changeState();
                 modify.Add(id - 1);
-                celle[id+1].Stato = true;
+                celle[id + 1].changeState();
                 modify.Add(id + 1);
-                celle[id-5].Stato = true;
+                celle[id - 5].changeState();
                 modify.Add(id - 5);
             }
             else {
-                celle[id - 1].Stato = true;
+                celle[id - 1].changeState();
                 modify.Add(id-1);
-                celle[id + 1].Stato = true;
+                celle[id + 1].changeState();
                 modify.Add(id+1);
-                celle[id - 5].Stato = true;
+                celle[id - 5].changeState();
                 modify.Add(id-5);
-                celle[id+5].Stato = true;
+                celle[id + 5].changeState();
                 modify.Add(id+5);
             
             }
-            celle[id].Stato = true;
+            celle[id].changeState();
             modify.Add(id);
             return modify;                
         }
 
         public bool Completo() {
             foreach (Cella c in celle) {
-                if (c.Stato == true)
+                if (c.Stato)
                     return false;
             }
             return true;

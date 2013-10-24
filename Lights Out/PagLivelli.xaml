@@ -10,15 +10,17 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+    
 
     <!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
@@ -28,23 +30,38 @@
             <TextBlock Text="livelli" FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
         </StackPanel>
-        <!--<StackPanel Grid.Row="1">-->
-            
+        <StackPanel Grid.Row="1">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/Campo.png">
+
+                </ImageBrush>
+            </StackPanel.Background>
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-            <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
-                <ListBox.ItemTemplate>
+            <ListBox Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
+         
+            <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                        <Button Content="{Binding Id}" Click="GoToGame"/>
+                        <Button Content="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="150" Width="150">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding Avaiable}" />
+                        </Button.Background>
+                    </Button>
                             <!--<TextBlock Text="{Binding Id}" />
                             <TextBlock Text="Stato:" />
                             <TextBlock Text="{Binding Avaiable}" />-->
                         <!--</StackPanel>-->
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>
-        <!--</StackPanel>-->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!--<StackPanel Orientation="Horizontal"/>-->
+                    <toolkit:WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        </StackPanel>
 
         <!--<Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
 

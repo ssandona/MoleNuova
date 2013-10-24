@@ -16,27 +16,26 @@ namespace Lights_Out.ViewModel
     private ObservableCollection<Cella> celle;
     private IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
         private Livello livAttuale;
-        private Livello successivo;
-        private Cella cellaAttuale;
+       /*private Livello successivo;*/
         private int mosse;
-        private string MoleIn = "Images/mole_in.png";
-        private string MoleOut = "Images/mole_out.png";
+        /*private string MoleIn = "Images/mole_in.png";
+        private string MoleOut = "Images/mole_out.png";*/
 
 
         public void Move(int CodCella) {
             
             List<int> a = livAttuale.Mossa(CodCella);
             /*MessageBox.Show(""+celle[CodCella].Stato);*/
-            string stato = "";
+            /*string stato = "";
             foreach (int el in a)
             {
                 string stat = "Stato" + el;
                 
                 RaisePropertyChanged(stat);
-            }
+            }*/
             /*string stato = "Stato" + CodCella.ToString();
             RaisePropertyChanged(stato);*/
-            this.Mosse = 1;
+            this.addMossa();
             /*for(int i=0;i<25;i++)
             stato = stato + celle[i].Stato;
             MessageBox.Show(stato);*/
@@ -62,7 +61,7 @@ namespace Lights_Out.ViewModel
         }
 
 
-        public string Stato0
+        /*public string Stato0
         {
             get
             {
@@ -310,7 +309,7 @@ namespace Lights_Out.ViewModel
                     return MoleOut;
                 else return MoleIn;
             }
-        }
+        }*/
 
            
 
@@ -346,15 +345,13 @@ namespace Lights_Out.ViewModel
             {
                 return mosse;
             }
-            set
-            {
-                if (value == 1)
-                {
-                    mosse++;
-                    RaisePropertyChanged("Mosse");
-                }
-            }
         }
+
+        public void addMossa(){
+            mosse++;
+            RaisePropertyChanged("Mosse");
+        }
+           
 
         public Livello LivAttuale {
             get {

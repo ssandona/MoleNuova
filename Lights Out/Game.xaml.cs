@@ -33,8 +33,7 @@ namespace Lights_Out
 
         private void Go(object sender, RoutedEventArgs e)
         {
-            string c = ((Button)sender).Name;
-            c = c.Substring(1, (c.Length-1));
+            string c = ((Button)sender).Tag.ToString();
             int n = Convert.ToInt32(c);
             ((LivelloVM)this.DataContext).Move(n);
         }

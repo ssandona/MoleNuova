@@ -10,6 +10,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -42,23 +43,36 @@
                        <!--Style="{StaticResource PhoneTextTitle1Style}"/> -->
         </StackPanel>
 
-        <!--<StackPanel Grid.Row="1">
-           
-            <ListBox ItemsSource="{Binding Celle}" SelectedItem="{Binding CellaAttuale, Mode=TwoWay}" Height="Auto" Width="Auto">
+        <StackPanel Grid.Row="1">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/Campo.png">
+
+                </ImageBrush>
+                </StackPanel.Background>
+                <ListBox ItemsSource="{Binding Celle}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Cella:"/>
+                        <StackPanel>
+                            <Button Tag="{Binding Id}" Margin="-7" BorderThickness="0"  Click="Go" Width="110" Height="110">
+                           <Button.Background>
+                                <ImageBrush ImageSource="{Binding Sfondo}" />
+                            </Button.Background>
+                        </Button>
+                        </StackPanel>
+                        <!--<TextBlock Text="Cella:"/>
                             <TextBlock Text="{Binding Id}" />
                             <TextBlock Text="Stato:" />
-                            <TextBlock Text="{Binding Stato}" />
-                        </StackPanel>
+                            <TextBlock Text="{Binding Stato}" />-->
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
             </ListBox>
-
-        </StackPanel>-->
-        <!--ContentPanel - place additional content here-->
+        </StackPanel>
+        <!--ContentPanel - place additional content here
         <Grid x:Name="ContentPanel1" Margin="0" Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="Images/Campo.png">
@@ -80,7 +94,6 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-<!--
             <ListBox ItemsSource="{Binding Celle}" SelectedItem="{Binding CellaAttuale, Mode=TwoWay}" Height="Auto" Width="Auto">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -93,7 +106,8 @@
                     </DataTemplate>
                </ListBox.ItemTemplate>
             </ListBox>
--->
+
+            
             <Button Name="b0" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="0" Grid.Column="0">
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding Stato0}" />
@@ -221,13 +235,13 @@
             </Button>
 
 
-            <!--<Button  Grid.Row="4" Grid.Column="4" BorderThickness="0" Margin="-7" >
+            <Button  Grid.Row="4" Grid.Column="4" BorderThickness="0" Margin="-7" >
                 <Button.Background>
                    <ImageBrush ImageSource="/Images/mole_out.jpg" />  
                 </Button.Background>
-            </Button>-->
+            </Button>
             
-        </Grid>
+        </Grid>-->
 
         <Grid x:Name="Mosse" Grid.Row="2">
 
