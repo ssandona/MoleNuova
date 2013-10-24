@@ -13,10 +13,7 @@ using Microsoft.Phone.Controls;
 using System.IO;
 using System.Runtime.Serialization;
 using PhoneApp1;
-
-
 using Lights_Out.ViewModel;
-
 
 
 namespace Lights_Out
@@ -27,12 +24,8 @@ namespace Lights_Out
         public MainPage()
         {
             InitializeComponent();
-
-            Test();
-
             //Test();
             LivelliVM lvm = new LivelliVM();
-
         }
 
 

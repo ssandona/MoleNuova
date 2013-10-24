@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<livelli>
+<livello>
+  <id>1</id>
+  <configurazione>0000001100100100110000000</configurazione>
+</livello>
+<livello>
+    <id>2</id>
+    <configurazione>0000001000111000000011100</configurazione>
+</livello>
+<livello>
+    <id>3</id>
+    <configurazione>1100110111011111011011111</configurazione>
+</livello>
+<livello>
+    <id>4</id>
+    <configurazione>1000111011001001010010110</configurazione>
+</livello>
+  <livello>
+    <id>5</id>
+    <configurazione>1101100000110110000111000</configurazione>
+  </livello>
+  <livello>
+    <id>6</id>
+    <configurazione>0001100011000001100011000</configurazione>
+  </livello>
+  <livello>
+    <id>7</id>
+    <configurazione>0000000100010101010101010</configurazione>
+  </livello>
+  <livello>
+    <id>8</id>
+    <configurazione>1111101110001000111011111</configurazione>
+  </livello>
+  <livello>
+    <id>9</id>
+    <configurazione>1111010001100011000111110</configurazione>
+    <c0>true</c0>
+  </livello>
+  <livello>
+    <id>10</id>
+    <configurazione>1111111111111111111111111</configurazione>
+  </livello>
+  <livello>
+    <id>11</id>
+    <configurazione>1010101010101010101010101</configurazione>
+  </livello>
+  <livello>
+    <id>12</id>
+    <configurazione>0001101100010001111011110</configurazione>
+  </livello>
+  <livello>
+    <id>13</id>
+    <configurazione>0100000000010000010001110</configurazione>
+  </livello>
+  <livello>
+    <id>14</id>
+    <configurazione>1000110001101011010101110</configurazione>
+  </livello>
+  <livello>
+    <id>15</id>
+    <configurazione>0100010010001011101000000</configurazione>
+  </livello>
+  <livello>
+    <id>16</id>
+    <configurazione>1000010100100100010001000</configurazione>
+  </livello>
+  <livello>
+    <id>17</id>
+    <configurazione>0010010101111111010100100</configurazione>
+  </livello>
+  <livello>
+    <id>18</id>
+    <configurazione>0101010010011111010001100</configurazione>
+  </livello>
+  <livello>
+    <id>19</id>
+    <configurazione>1111111000000110111000100</configurazione>
+  </livello>
+  <livello>
+    <id>20</id>
+    <configurazione>0011100000100001111001000</configurazione>
+  </livello>
+</livelli>

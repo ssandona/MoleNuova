@@ -26,14 +26,17 @@ namespace Lights_Out
             string liv = string.Empty;
             if (NavigationContext.QueryString.TryGetValue("id", out liv))
             {
-
-                b00.Content = liv;
-                int a = Convert.ToInt32(liv);
-
                 int a = Convert.ToInt32(liv);
                 this.DataContext = new LivelloVM(a);
-
             }
+        }
+
+        private void Go(object sender, RoutedEventArgs e)
+        {
+            string c = ((Button)sender).Name;
+            c = c.Substring(1, (c.Length-1));
+            int n = Convert.ToInt32(c);
+            ((LivelloVM)this.DataContext).Move(n);
         }
     }
 }

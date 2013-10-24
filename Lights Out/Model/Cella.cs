@@ -38,13 +38,13 @@ namespace Lights_Out.Model
                 {
                     if (stato == false)
                     {
-                        stato = value;
+                        stato = true;
                         RaisePropertyChanged("Stato");
 
                     }
                     else
                     {
-                        stato = value;
+                        stato = false;
                         RaisePropertyChanged("Stato");
 
                     }

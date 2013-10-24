@@ -11,10 +11,15 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/sfondo.png">
+                
+            </ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="5*"/>
@@ -46,7 +51,7 @@
 
             <Button Name="Inizia" 
                     BorderThickness="0"
-                    Background="{StaticResource PhoneAccentBrush}"   
+                    Background="Transparent"   
                     Content="Gioca Ora!"  
                     Grid.Row="0" 
                     Grid.Column="0" 
@@ -57,7 +62,7 @@
             <Button Name="Informazioni" 
                     Content="Informazioni" 
                     BorderThickness="0" 
-                    Background="{StaticResource PhoneAccentBrush}"  
+                    Background="Transparent"  
                     Grid.Row="1" 
                     Grid.Column="0" 
                     FontFamily="Comic Sans MS"
@@ -66,7 +71,7 @@
             <Button Name="Altro" 
                     Content="Altro" 
                     BorderThickness="0" 
-                    Background="{StaticResource PhoneAccentBrush}"   
+                    Background="Transparent"   
                     Grid.Row="2" 
                     Grid.Column="0" 
                     FontFamily="Comic Sans MS"

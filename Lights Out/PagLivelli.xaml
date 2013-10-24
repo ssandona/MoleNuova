@@ -22,19 +22,21 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="APPLICAZIONE" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Livelli" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <StackPanel Grid.Row="0" Margin="10,15,0,25">
+            <TextBlock Text="MOLE OUT" FontFamily="Comic Sans MS"
+                       FontSize="{StaticResource PhoneFontSizeNormal}"/>
+            <TextBlock Text="livelli" FontFamily="Comic Sans MS"
+                       FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
+        <!--<StackPanel Grid.Row="1">-->
             
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-            <ListBox ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" Height="100">
+            <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                            <Button Content="{Binding Id}" />
+                        <Button Content="{Binding Id}" Click="GoToGame"/>
                             <!--<TextBlock Text="{Binding Id}" />
                             <TextBlock Text="Stato:" />
                             <TextBlock Text="{Binding Avaiable}" />-->
@@ -42,17 +44,8 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
-        <StackPanel Grid.Row="2">
-            <Grid DataContext="ListaLiv">
-                <TextBlock Text="{Binding Id}" />
-                
-            </Grid>
-            <!--<TextBlock Text="LivelloAttuale:"/>
-            <TextBlock Name="Livello" Text="{Binding Cod}" />
-            <Button Content="{Binding Cod}" Click="GoToGame" />-->
-            
-        </StackPanel>
+        <!--</StackPanel>-->
+
         <!--<Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
 
 

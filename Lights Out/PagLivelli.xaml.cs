@@ -7,10 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-
-
 using Lights_Out.ViewModel;
-
 
 namespace Lights_Out
 {
@@ -19,14 +16,6 @@ namespace Lights_Out
         public PagLivelli()
         {
             InitializeComponent();
-
-        }
-
-        private void Inizia_livello(object sender, RoutedEventArgs e)
-        {
-            string liv = (string)((Button)sender).Content;
-            string uri = "/Game.xaml?id=" + liv;
-
             this.DataContext = new LivelliVM();
         }
 
@@ -34,7 +23,6 @@ namespace Lights_Out
         {
             int liv = (int)((Button)sender).Content;
             string uri = "/Game.xaml?id=" + liv.ToString();
-
             //Livelli.setActual(liv);
             NavigationService.Navigate(new Uri(uri, UriKind.Relative));
             //tutto sostituibile con ICommand

@@ -1,9 +1,5 @@
-
-﻿using PhoneApp1;
-
 ﻿using Lights_Out.Model;
 using PhoneApp1;
-
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,20 +9,6 @@ using System.Text;
 
 namespace Lights_Out.ViewModel
 {
-
-    /*
-    class LivelliVM: INotifyPropertyChanged
-    {
-        ObservableCollection<Livello> livelli=new ObservableCollection<Livello>();
-
-        public LivelliVM() { 
-            for(int i=1; i<5 ;i++){
-
-       
-        }
-    }
-    }*/
-
     public class LivelliVM: INotifyPropertyChanged
     {
         private ObservableCollection<Livello> listaLiv;
@@ -57,6 +39,5 @@ namespace Lights_Out.ViewModel
         }
 
     }
-
 
 }
