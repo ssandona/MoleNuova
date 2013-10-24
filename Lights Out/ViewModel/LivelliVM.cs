@@ -7,10 +7,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
-<<<<<<< HEAD
-=======
 using System.Xml.Linq;
->>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
+using System.Xml.Linq;
+
 
 namespace Lights_Out.ViewModel
 {
@@ -21,24 +20,11 @@ namespace Lights_Out.ViewModel
 
         public LivelliVM() {
             listaLiv = new ObservableCollection<Livello>();
-<<<<<<< HEAD
-            Livello uno = new Livello(1);
-            Livello due = new Livello(2);
-            Livello tre = new Livello(3);
-
-            if (uno.isAvaiable()) { listaLiv.Add(uno); }
-            if (due.isAvaiable()) { listaLiv.Add(due); }
-            if (tre.isAvaiable()) { listaLiv.Add(tre); }
-=======
             List<int> livelli = caricaLivelli();
             foreach (int id in livelli)
             {
                 listaLiv.Add(new Livello(id));
             }
-            /*listaLiv.Add(new Livello(1));
-            listaLiv.Add(new Livello(2));
-            listaLiv.Add(new Livello(3));*/
->>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
         }
 
 
