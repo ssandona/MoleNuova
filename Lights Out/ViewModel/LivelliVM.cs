@@ -12,45 +12,56 @@ using System.Xml.Linq;
 
 namespace Lights_Out.ViewModel
 {
+
+    /// <summary>
+    /// CLASS: classe ViewModel che gestisce la lista di livelli
+    /// </summary>
     public class LivelliVM: INotifyPropertyChanged
     {
+        /// VAR: lista di livelli
         private ObservableCollection<Livello> listaLiv;
 
-
+        /// COSTRUTTORE: carica dallo xml una lista di id e crea i livelli in base all'id
         public LivelliVM() {
+           
             listaLiv = new ObservableCollection<Livello>();
+            
+            /// assegna una lista di id di livelli
             List<int> livelli = caricaLivelli();
+
+            /// oer ogni id nella lista caricata, crea un livello nuovo ed assegnalo al campo 
             foreach (int id in livelli)
             {
                 listaLiv.Add(new Livello(id));
             }
         }
 
-
-        
-
+        /// GETTER: listaLiv
         public ObservableCollection<Livello> ListaLiv {
             get {
                 return listaLiv;
             }
         }
 
-        
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string PropName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(PropName));
-        }
-
+        /// METODO: Carica i livelli dentro la lista
         public List<int> caricaLivelli()
         {
+            /// apertura file livelli.xml
             XDocument doc = XDocument.Load("livelli.xml");
+
+            /// creazione lista di interi
             List<int> lista = new List<int>();
+
+            /// configurazione dei livelli
             string conf = ritornaLivelli(doc);
+
+            /// togli tutti i spazi vuoti
             conf = conf.Trim();
+
+            /// converti la configurazione da string in intero
             int c = Convert.ToInt32(conf);
             
+            /// per ogni aggiungi l'id alla lista
             for (int i = 1; i < c+1; i++)
             {
                     lista.Add(i);
@@ -59,12 +70,22 @@ namespace Lights_Out.ViewModel
 
         }
 
+        /// METODO: Per i figli di ogni tag livello dammi la proprieta id
         private string ritornaLivelli(XDocument doc)
         {
             var pos = from query in doc.Descendants("livello")
                       select query.Element("id").Value;
             return pos.Last();
-        }/*Fine del codice da usare*/
+        }
+
+        /// METODO: Implementa interfaccia
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged(string PropName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(PropName));
+        }
+
 
     }
 

@@ -18,21 +18,22 @@ using Lights_Out.ViewModel;
 
 namespace Lights_Out
 {
+    /// CLASS: classe parziale di inizio merged con il file xaml parsato
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        /// COSTRUTTORE
         public MainPage()
         {
             InitializeComponent();
         }
 
-
+        /// METODO: richiamato dal bottone inizia
         private void Inizia_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/PagLivelli.xaml", UriKind.Relative));
         }
 
-
+        /// METODO: richiamato dall bottone informazoni
         private void Informazioni_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/info.xaml", UriKind.Relative));

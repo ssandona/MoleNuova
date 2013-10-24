@@ -27,222 +27,81 @@
             <TextBlock x:Name="ApplicationTitle1" Text="MOLE OUT" FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeNormal}"/>
             <Grid x:Name="Liv">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="3*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" x:Name="PageTitle1" Text="livello" 
+                
+                
+                <TextBlock Grid.Column="0" 
+                       x:Name="PageTitle1" 
+                       Text="livello" 
                        FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
-                <TextBlock x:Name="id" Grid.Column="1" Text="{Binding LivAttuale.Id}" 
+                
+                <TextBlock x:Name="id" 
+                       Grid.Column="1" 
+                       Text="{Binding LivAttuale.Id}" 
                        FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 
             </Grid>
             
-                       <!--Style="{StaticResource PhoneTextTitle1Style}"/> -->
+                 
         </StackPanel>
 
+        
+        <!-- CAMPO DI GIOCO-->
         <StackPanel Grid.Row="1">
+            
             <StackPanel.Background>
-                <ImageBrush ImageSource="Images/Campo.png">
-
-                </ImageBrush>
-                </StackPanel.Background>
-                <ListBox ItemsSource="{Binding Celle}">
+                
+                <ImageBrush ImageSource="Images/Campo.png"></ImageBrush>
+                
+            </StackPanel.Background>
+            
+            <!-- GRIGLIA -->
+            <ListBox ItemsSource="{Binding Celle}">
                 <ListBox.ItemTemplate>
+                    
                     <DataTemplate>
+                        
                         <StackPanel>
-                            <Button Tag="{Binding Id}" Margin="-7" BorderThickness="0"  Click="Go" Width="110" Height="110">
-                           <Button.Background>
-                                <ImageBrush ImageSource="{Binding Sfondo}" />
-                            </Button.Background>
-                        </Button>
+                            
+                           <Button Tag="{Binding Id}" 
+                                   Margin="-7" 
+                                   BorderThickness="0"  
+                                   Click="Go" 
+                                   Width="110" 
+                                   Height="110">
+                               
+                                 <Button.Background>
+                                       <ImageBrush ImageSource="{Binding Sfondo}" />
+                                 </Button.Background>
+                               
+                           </Button>
                         </StackPanel>
-                        <!--<TextBlock Text="Cella:"/>
-                            <TextBlock Text="{Binding Id}" />
-                            <TextBlock Text="Stato:" />
-                            <TextBlock Text="{Binding Stato}" />-->
+                        
                     </DataTemplate>
+                    
+                    
                 </ListBox.ItemTemplate>
+                    
                 <ListBox.ItemsPanel>
+                    
                     <ItemsPanelTemplate>
                         <toolkit:WrapPanel/>
                     </ItemsPanelTemplate>
+                    
                 </ListBox.ItemsPanel>
             </ListBox>
+            <!-- END GRIGLIA-->
         </StackPanel>
-        <!--ContentPanel - place additional content here
-        <Grid x:Name="ContentPanel1" Margin="0" Grid.Row="1">
-            <Grid.Background>
-                <ImageBrush ImageSource="Images/Campo.png">
-
-                </ImageBrush>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <ListBox ItemsSource="{Binding Celle}" SelectedItem="{Binding CellaAttuale, Mode=TwoWay}" Height="Auto" Width="Auto">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Grid.Row="{Binding Id}" Grid.Column="{Binding Id}" Orientation="Horizontal">
-                            <TextBlock Text="Cella:"/>
-                            <TextBlock Text="{Binding Id}" />
-                            <TextBlock Text="Stato:" />
-                            <TextBlock Text="{Binding Stato}" />
-                        </StackPanel>
-                    </DataTemplate>
-               </ListBox.ItemTemplate>
-            </ListBox>
-
-            
-            <Button Name="b0" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="0" Grid.Column="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato0}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b1" Margin="-7" BorderThickness="0"   Click="Go" Grid.Row="0" Grid.Column="1">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato1}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b2" Margin="-7"  BorderThickness="0"   Click="Go" Grid.Row="0" Grid.Column="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato2}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b3" Margin="-7"  BorderThickness="0"  Click="Go" Grid.Row="0" Grid.Column="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato3}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b4" Margin="-7"  BorderThickness="0"   Click="Go" Grid.Row="0" Grid.Column="4">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato4}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b5" Margin="-7" BorderThickness="0"   Click="Go" Grid.Row="1" Grid.Column="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato5}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b6" Margin="-7" BorderThickness="0"   Click="Go" Grid.Row="1" Grid.Column="1">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato6}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b7" Margin="-7"  BorderThickness="0"   Click="Go" Grid.Row="1" Grid.Column="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato7}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b8" Margin="-7" BorderThickness="0"   Click="Go" Grid.Row="1" Grid.Column="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato8}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b9" Margin="-7"  BorderThickness="0"   Click="Go" Grid.Row="1" Grid.Column="4">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato9}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b10" Margin="-7" BorderThickness="0"   Click="Go" Grid.Row="2" Grid.Column="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato10}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b11" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="2" Grid.Column="1">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato11}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b12" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="2" Grid.Column="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato12}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b13" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="2" Grid.Column="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato13}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b14" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="2" Grid.Column="4">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato14}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b15" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="3" Grid.Column="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato15}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b16" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="3" Grid.Column="1">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato16}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b17" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="3" Grid.Column="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato17}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b18" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="3" Grid.Column="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato18}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b19" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="3" Grid.Column="4">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato19}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b20" Margin="-7" BorderThickness="0" Click="Go" Grid.Row="4" Grid.Column="0">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato20}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b21" Margin="-7" BorderThickness="0"  Click="Go" Grid.Row="4" Grid.Column="1">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato21}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b22" Margin="-7" BorderThickness="0" Click="Go" Grid.Row="4" Grid.Column="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato22}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b23" Margin="-7" BorderThickness="0" Click="Go" Grid.Row="4" Grid.Column="3">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato23}" />
-                </Button.Background>
-            </Button>
-            <Button Name="b24" Margin="-7" BorderThickness="0" Click="Go" Grid.Row="4" Grid.Column="4">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding Stato24}" />
-                </Button.Background>
-            </Button>
+        <!-- CAMPO DI GIOCO-->
 
 
-            <Button  Grid.Row="4" Grid.Column="4" BorderThickness="0" Margin="-7" >
-                <Button.Background>
-                   <ImageBrush ImageSource="/Images/mole_out.jpg" />  
-                </Button.Background>
-            </Button>
-            
-        </Grid>-->
-
+        <!-- INIZIO PARTE MOSSE -->
         <Grid x:Name="Mosse" Grid.Row="2">
 
             <Grid.ColumnDefinitions>
@@ -291,6 +150,7 @@
                        FontFamily="Comic Sans MS"/>
 
         </Grid>
+        <!-- END PARTE MOSSE-->
 
 
 

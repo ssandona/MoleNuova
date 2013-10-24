@@ -11,21 +11,25 @@ using Lights_Out.ViewModel;
 
 namespace Lights_Out
 {
+    /// CLASS classe parziale merged con il file xaml parsato
     public partial class PagLivelli : PhoneApplicationPage
     {
+
+        /// COSTRUTTORE: setta il datacontext (dove è il this.datacontext?)
         public PagLivelli()
         {
             InitializeComponent();
             this.DataContext = new LivelliVM();
         }
 
+        /// METODO: passa ad un altra pagina
         private void GoToGame(object sender, RoutedEventArgs e)
         {
             int liv = (int)((Button)sender).Content;
             string uri = "/Game.xaml?id=" + liv.ToString();
-            //Livelli.setActual(liv);
+           
             NavigationService.Navigate(new Uri(uri, UriKind.Relative));
-            //tutto sostituibile con ICommand
+         
         }
     }
 }
