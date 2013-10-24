@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -15,7 +16,7 @@ namespace PhoneApp1
     public class Livello: INotifyPropertyChanged
     {
       private ObservableCollection<Cella> celle;
-
+      private IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
 
         //variabile per il best score del livello, se diverso da 0 significa che il livello è passato 
         private string best_score;
@@ -33,7 +34,6 @@ namespace PhoneApp1
         public Livello(int cod)
         {
             celle = new ObservableCollection<Cella>();
-            best_score = "-";
             id = cod;
             if (cod != 1)
                 avaiable = false;
@@ -46,11 +46,15 @@ namespace PhoneApp1
             int i = 0;
             foreach (bool b in ce) { 
             celle.Add(new Cella(i,b));
-            i++;
+            i++;   
             }
-         
-
-        }
+         if(appSettings.Contains("bestscore"+id))
+                {
+                    string content = appSettings["bestscore" + id].ToString();
+                    best_score = content;
+                }
+                else best_score="-";
+        }//end of livello constructor
 
 
         public ObservableCollection<Cella> Scacchiera{
@@ -236,90 +240,6 @@ namespace PhoneApp1
 
 
 
-
-        /// <summary>
-        /// Metodo che invoca una mossa sulla scacchiera e decreta la vittoria o meno controllando se tutta la scacchiera è settata a false
-        /// pre: passo due parametri interi da 0 a 4
-        /// post: cambia la scacchiera secondo la mossa data
-        /// </summary>
-        /// <param name="x">Ascissa della mossa fatta, da 0 a 4</param>
-        /// <param name="y">Ordinata  della mossa fatta, da 0 a 4</param>
-        /// <returns>Un booleano che decreta se hai vinto o meno</returns>
-        /*
-        public bool Mossa(int x, int y)
-        {
-            //aumenta il contatore delle mosse effettuate
-            mosse++;
-
-
-            //sistema le tre caselle orizzontali
-            switch (x)
-            {
-                case 0:
-                    {
-                        scacchiera[1, y] = !scacchiera[1, y];
-                        scacchiera[0, y] = !scacchiera[0, y];
-                        scacchiera[4, y] = !scacchiera[4, y];
-                        break;
-                    }//end of case x==0
-                case 4:
-                    {
-                        scacchiera[0, y] = !scacchiera[0, y];
-                        scacchiera[4, y] = !scacchiera[4, y];
-                        scacchiera[3, y] = !scacchiera[3, y];
-                        break;
-                    }//end of case x==5
-                default:
-                    {
-                        scacchiera[x + 1, y] = !scacchiera[x + 1, y];
-                        scacchiera[x, y] = !scacchiera[x, y];
-                        scacchiera[x - 1, y] = !scacchiera[x - 1, y];
-                        break;
-                    }//end of case 1<x<5
-            }//end of switch
-
-            switch (y)
-            {
-                case 0:
-                    {
-                        scacchiera[x, 1] = !scacchiera[x, 1];
-                        scacchiera[x, 4] = !scacchiera[x, 4];
-                        break;
-                    }//end of case y==0
-                case 4:
-                    {
-                        scacchiera[x, 3] = !scacchiera[x, 3];
-                        scacchiera[x, 0] = !scacchiera[x, 0];
-                        break;
-                    }//end of case y==5
-                default:
-                    {
-                        scacchiera[x, y + 1] = !scacchiera[x, y + 1];
-                        scacchiera[x, y - 1] = !scacchiera[x, y - 1];
-                        break;
-                    }//end of case 1<y<5
-            }//end of switch
-        
-            //Controlla se esiste almeno una luce accesa e in tal caso dì che non hai ancora vinto (false) 
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    if (scacchiera[i, j] == true) return false;
-                }
-            }//end of nested for
-
-
-
-            Altrimenti ritorna che hai vinto (true!) 
-            return true;
-        }
-*/
-
-        /// <summary>
-        /// metodo che aggiorna il best_score del livello
-        /// </summary>
-        /// <returns>the void</returns>
 
 
     }

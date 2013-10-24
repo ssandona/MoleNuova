@@ -4,14 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Windows;
 
 namespace Lights_Out.ViewModel
 {
-    class LivelloVM: INotifyPropertyChanged{
+    public class LivelloVM: INotifyPropertyChanged{
     private ObservableCollection<Cella> celle;
+    private IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
         private Livello livAttuale;
         private Livello successivo;
         private Cella cellaAttuale;
@@ -41,8 +44,17 @@ namespace Lights_Out.ViewModel
             if (livAttuale.Completo())
             {
                 livAttuale.Best_Score = mosse.ToString();
-                MessageBox.Show("Ti ga vinto");
+                /*Aggiungo alle settings bestscore+id*/
+                if (appSettings.Contains("bestscore"+livAttuale.Id))
+                    {
+                        /* Rimuovi per poi aggiungere*/
+                        appSettings.Remove("bestscore"+livAttuale.Id);
+                    }
+                appSettings.Add("bestscore" + livAttuale.Id, livAttuale.Best_Score);
+                
+                MessageBox.Show("Ti ga vinto more!");
                 //NavigationService.Navigate(new Uri("/LivelloCompletato.xaml", UriKind.Relative));
+
             }
 
 
