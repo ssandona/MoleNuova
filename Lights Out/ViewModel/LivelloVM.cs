@@ -318,7 +318,7 @@ namespace Lights_Out.ViewModel
         public LivelloVM(int i) {
             celle = new ObservableCollection<Cella>();
             livAttuale=new Livello(i);
-            successivo = new Livello(i+1);
+            //successivo = new Livello(i+1);
             celle=livAttuale.Scacchiera;
             mosse = 0;
         }

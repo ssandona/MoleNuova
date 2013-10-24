@@ -7,6 +7,7 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows;
 using System.Xml.Linq;
 
 
@@ -234,6 +235,8 @@ namespace PhoneApp1
             var pos = from query in doc.Descendants("livello")
                       where query.Element("id").Value == livello
                       select query.Element("configurazione").Value;
+            if (livello == "20")
+                MessageBox.Show(pos.First());
             return pos.First();
         }/*Fine del codice da usare*/
 

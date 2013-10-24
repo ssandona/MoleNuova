@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
+using System.Xml.Linq;
 
 namespace Lights_Out.ViewModel
 {
@@ -16,9 +18,14 @@ namespace Lights_Out.ViewModel
 
         public LivelliVM() {
             listaLiv = new ObservableCollection<Livello>();
-            listaLiv.Add(new Livello(1));
+            List<int> livelli = caricaLivelli();
+            foreach (int id in livelli)
+            {
+                listaLiv.Add(new Livello(id));
+            }
+            /*listaLiv.Add(new Livello(1));
             listaLiv.Add(new Livello(2));
-            listaLiv.Add(new Livello(3));
+            listaLiv.Add(new Livello(3));*/
         }
 
 
@@ -37,6 +44,29 @@ namespace Lights_Out.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(PropName));
         }
+
+        public List<int> caricaLivelli()
+        {
+            XDocument doc = XDocument.Load("livelli.xml");
+            List<int> lista = new List<int>();
+            string conf = ritornaLivelli(doc);
+            conf = conf.Trim();
+            int c = Convert.ToInt32(conf);
+            
+            for (int i = 1; i < c+1; i++)
+            {
+                    lista.Add(i);
+            }
+            return lista;
+
+        }
+
+        private string ritornaLivelli(XDocument doc)
+        {
+            var pos = from query in doc.Descendants("livello")
+                      select query.Element("id").Value;
+            return pos.Last();
+        }/*Fine del codice da usare*/
 
     }
 
