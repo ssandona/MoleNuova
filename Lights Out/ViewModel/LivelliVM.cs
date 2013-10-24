@@ -9,6 +9,10 @@ using System.Text;
 using System.Windows;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+using System.Xml.Linq;
+>>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
 =======
 using System.Xml.Linq;
 >>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
@@ -27,6 +31,7 @@ namespace Lights_Out.ViewModel
             listaLiv = new ObservableCollection<Livello>();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Livello uno = new Livello(1);
             Livello due = new Livello(2);
             Livello tre = new Livello(3);
@@ -35,6 +40,8 @@ namespace Lights_Out.ViewModel
             if (due.isAvaiable()) { listaLiv.Add(due); }
             if (tre.isAvaiable()) { listaLiv.Add(tre); }
 =======
+=======
+>>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
 =======
 >>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
             List<int> livelli = caricaLivelli();
@@ -46,6 +53,9 @@ namespace Lights_Out.ViewModel
             listaLiv.Add(new Livello(2));
             listaLiv.Add(new Livello(3));*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
+=======
 >>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
 =======
 >>>>>>> fc156e4d9600ff845348bc48b2e3f1bd2adda86b
