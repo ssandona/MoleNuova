@@ -25,11 +25,19 @@ namespace Lights_Out
         /// METODO: passa ad un altra pagina
         private void GoToGame(object sender, RoutedEventArgs e)
         {
-            int liv = (int)((Button)sender).Content;
+            int liv = (int)((Button)sender).Tag;
             string uri = "/Game.xaml?id=" + liv.ToString();
-           
+
             NavigationService.Navigate(new Uri(uri, UriKind.Relative));
-         
+
         }
+
+        //Premendo il Back button voglio tornare alla main page e non nella pagina prima
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/MainPage.xaml?Refresh=true", UriKind.Relative));
+        } 
+
+
     }
 }

@@ -38,7 +38,25 @@ namespace Lights_Out
                 /// crea un nuovo DataContext con il LivelloVM(id) per il binding
                 this.DataContext = new LivelloVM(a);
             }
+
+            /*if (e.NavigationMode == NavigationMode.Back)
+                {
+                    MessageBox.Show("Te piasaria");
+            NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
+              }*/
         }
+
+        //Al click del back button chiedo se si è sicuri di uscire. Se si torno alla pagina dei livelli a cui applico un refresh
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult m=MessageBox.Show("Sei sicuro?", "Esci dal livello", MessageBoxButton.OKCancel);
+            if(m==MessageBoxResult.OK)
+            {
+                NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
+            }
+            else e.Cancel = true;
+            
+        }  
 
         /// METODO: invoca il movimento sul bottone selezionato
         private void Go(object sender, RoutedEventArgs e)

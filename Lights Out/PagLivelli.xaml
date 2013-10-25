@@ -19,7 +19,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             
         </Grid.RowDefinitions>
 
@@ -30,23 +30,38 @@
             <TextBlock Text="livelli" FontFamily="Comic Sans MS"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <StackPanel.Background>
+        <!--<StackPanel Grid.Row="1" Height="Auto">-->
+            <!--<StackPanel.Background>
                 <ImageBrush ImageSource="Images/Campo.png">
 
                 </ImageBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-            <ListBox Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
+            <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
          
             <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                        <Button Content="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="150" Width="150">
+                        <Button Tag="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="120" Width="120">
                         <Button.Background>
                             <ImageBrush ImageSource="{Binding Avaiable}" />
                         </Button.Background>
+                            <!--<Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="4*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="4*" />
+                                </Grid.ColumnDefinitions
+                                <TextBlock Text="{Binding Id}" Grid.Row="0" Grid.Column="0" />
+                                <TextBlock Text="{Binding Id}" Grid.Row="0" Grid.Column="1" />
+                                <TextBlock Text="{Binding Id}" Grid.Row="1" Grid.Column="0" />
+
+                                <TextBlock Text="{Binding Id}" Grid.Row="1" Grid.Column="1" />
+                            </Grid>>-->
                     </Button>
                             <!--<TextBlock Text="{Binding Id}" />
                             <TextBlock Text="Stato:" />
@@ -61,7 +76,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        </StackPanel>
+        <!--</StackPanel>-->
 
         <!--<Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
 

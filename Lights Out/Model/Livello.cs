@@ -137,8 +137,8 @@ namespace PhoneApp1
         public string Avaiable {
             get {
                 if (isAvaiable())
-                    return "Images/unlocked_" + id + ".png";
-                else return "Images/locked_" + id + ".png";
+                    return "Images/unlocked_"+id+".png";
+                else return "Images/locked_"+id+".png";
             }
         }
 

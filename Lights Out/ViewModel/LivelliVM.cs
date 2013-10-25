@@ -60,7 +60,6 @@ namespace Lights_Out.ViewModel
 
             /// converti la configurazione da string in intero
             int c = Convert.ToInt32(conf);
-            
             /// per ogni aggiungi l'id alla lista
             for (int i = 1; i < c+1; i++)
             {

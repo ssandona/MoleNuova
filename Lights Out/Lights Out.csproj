@@ -118,9 +118,26 @@
     </Content>
     <Content Include="dll\Microsoft.Phone.Controls.Toolkit.dll" />
     <Content Include="Images\Campo.png" />
+    <Content Include="Images\locked.png" />
+    <Content Include="Images\locked_10.png" />
+    <Content Include="Images\locked_11.png" />
+    <Content Include="Images\locked_12.png" />
+    <Content Include="Images\locked_13.png" />
+    <Content Include="Images\locked_14.png" />
+    <Content Include="Images\locked_15.png" />
+    <Content Include="Images\locked_16.png" />
+    <Content Include="Images\locked_17.png" />
+    <Content Include="Images\locked_18.png" />
+    <Content Include="Images\locked_19.png" />
     <Content Include="Images\locked_2.png" />
+    <Content Include="Images\locked_20.png" />
     <Content Include="Images\locked_3.png" />
     <Content Include="Images\locked_4.png" />
+    <Content Include="Images\locked_5.png" />
+    <Content Include="Images\locked_6.png" />
+    <Content Include="Images\locked_7.png" />
+    <Content Include="Images\locked_8.png" />
+    <Content Include="Images\locked_9.png" />
     <Content Include="Images\mole_in.png" />
     <Content Include="Images\mole_out.png" />
     <Content Include="livelli.xml">
