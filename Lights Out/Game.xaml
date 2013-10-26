@@ -113,7 +113,7 @@
         <StackPanel Grid.Row="1">
             
             <!-- GRIGLIA -->
-            <ListBox ItemsSource="{Binding Celle}">
+            <ListBox ItemsSource="{Binding Celle}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <ListBox.ItemTemplate>
                     
                     <DataTemplate>

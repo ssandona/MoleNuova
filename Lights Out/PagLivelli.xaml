@@ -93,7 +93,7 @@
                 </ImageBrush>
             </StackPanel.Background>-->
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-            <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" >
+        <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
          
             <ListBox.ItemTemplate>
                     <DataTemplate>
