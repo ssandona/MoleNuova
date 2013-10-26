@@ -16,7 +16,10 @@
     
 
     <!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="/Images/backprova.jpg"/>
+    	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -25,10 +28,10 @@
 
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
         <StackPanel Grid.Row="0" Margin="10,15,0,25">
-            <TextBlock Text="MOLE OUT" FontFamily="Comic Sans MS"
-                       FontSize="{StaticResource PhoneFontSizeNormal}"/>
-            <TextBlock Text="livelli" FontFamily="Comic Sans MS"
-                       FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
+            <TextBlock Text="MOLE OUT" FontFamily="Perpetua"
+                       FontSize="26.667"/>
+            <TextBlock Text="livelli" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
+                       FontSize="86.667"/>
         </StackPanel>
         <!--<StackPanel Grid.Row="1" Height="Auto">-->
             <!--<StackPanel.Background>

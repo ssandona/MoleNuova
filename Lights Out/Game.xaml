@@ -12,10 +12,13 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Background="#00000000">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="GridPlay" Background="Transparent">
+    <Grid x:Name="GridPlay">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="/Images/backprova.jpg" Stretch="Fill"/>
+    	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="5*"/>
@@ -24,26 +27,27 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel1" Grid.Row="0" Margin="10,15,0,25">
-            <TextBlock x:Name="ApplicationTitle1" Text="MOLE OUT" FontFamily="Comic Sans MS"
-                       FontSize="{StaticResource PhoneFontSizeNormal}"/>
+            <TextBlock x:Name="ApplicationTitle1" Text="MOLE OUT" FontFamily="Perpetua"
+                       FontSize="26.667"/>
             <Grid x:Name="Liv">
                 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="6*" />
                 </Grid.ColumnDefinitions>
                 
                 
                 <TextBlock Grid.Column="0" 
                        x:Name="PageTitle1" 
                        Text="livello" 
-                       FontFamily="Comic Sans MS"
-                       FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
+                       FontSize="80" Margin="0,0,10,0" Grid.ColumnSpan="2"/>
                 
                 <TextBlock x:Name="id" 
-                       Grid.Column="1" 
+                       Grid.Column="2" 
                        Text="{Binding LivAttuale.Id}" 
-                       FontFamily="Comic Sans MS"
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 
             </Grid>
@@ -120,7 +124,7 @@
                        Grid.Column="0" 
                        Grid.Row="0" 
                        FontSize="{StaticResource PhoneFontSizeLarge}"
-                       FontFamily="Comic Sans MS"/>
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="0,1,83,10" FontWeight="Bold"/>
            
             <TextBlock Name="num_mosse" 
                        HorizontalAlignment="Center" 
@@ -128,7 +132,7 @@
                        Grid.Column="1" 
                        Grid.Row="0" 
                        FontSize="{StaticResource PhoneFontSizeExtraLarge}"
-                       FontFamily="Comic Sans MS"/>
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" FontWeight="Bold"/>
             
             <TextBlock HorizontalAlignment="Right" 
                        VerticalAlignment="Center" 
@@ -137,7 +141,7 @@
                        Grid.Column="0" 
                        Grid.Row="1" 
                        FontSize="{StaticResource PhoneFontSizeLarge}"
-                       FontFamily="Comic Sans MS"/>
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="0,1,36,10" FontWeight="Bold"/>
             
             <TextBlock Name="best_score" 
                        HorizontalAlignment="Center" 
@@ -147,7 +151,7 @@
                        Grid.Column="1" 
                        Grid.Row="1" 
                        FontSize="{StaticResource PhoneFontSizeLarge}"
-                       FontFamily="Comic Sans MS"/>
+                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" FontWeight="Bold"/>
 
         </Grid>
         <!-- END PARTE MOSSE-->
