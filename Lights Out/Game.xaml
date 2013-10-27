@@ -70,7 +70,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="GridPlay">
     	<Grid.Background>
-    		<ImageBrush ImageSource="/Images/backprova.jpg" Stretch="Fill"/>
+    		<ImageBrush ImageSource="/Images/sfondo2.png" Stretch="Fill"/>
     	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
