@@ -108,7 +108,40 @@
                  
         </StackPanel>
 
-        
+        <Popup x:Name="vittoria" Grid.Row="1" >
+            <Border  BorderThickness="2" Margin="10 0 10 0" BorderBrush="{StaticResource PhoneAccentBrush}">
+                <StackPanel Background="LightBlue" Height="490" Width="460">             
+                    <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/vittoria.png" HorizontalAlignment="Center" Stretch="Uniform" Width="250" />
+                    <TextBlock Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="40" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
+                    <Button Grid.Row="2" x:Name="btn_continue"  Content="Continue" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="next_level"/>
+
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <Popup x:Name="torna" Grid.Row="1">
+            <Border  BorderThickness="2" Margin="10 0 10 0" BorderBrush="{StaticResource PhoneAccentBrush}">
+                <StackPanel  Background="LightBlue" Height="490" Width="460" >
+                    <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/mole_question.png" HorizontalAlignment="Center" Stretch="Uniform" Width="200" />
+                    <TextBlock Text="Esci dal livello" TextAlignment="Center" FontSize="40" Margin="10,0" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" />
+                    <TextBlock Text="Sei sicuro?" FontSize="21" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <Button x:Name="btn_back"  Content="SI" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="back" />
+                        <Button x:Name="btn_cancel"    Content="NO"  FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="continua"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <MediaElement 
+    x:Name="mole_sound" 
+    Source="Sounds/pop.mp3" 
+    AutoPlay="False" />
+
+        <MediaElement 
+    x:Name="win_sound" 
+    Source="Sounds/win.mp3" 
+    AutoPlay="False" />
         <!-- CAMPO DI GIOCO-->
         <StackPanel Grid.Row="1">
             

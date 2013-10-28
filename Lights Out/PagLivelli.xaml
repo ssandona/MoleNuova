@@ -71,7 +71,7 @@
     <!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
     <Grid x:Name="LayoutRoot">
     	<Grid.Background>
-    		<ImageBrush Stretch="Fill" ImageSource="/Images/backprova.jpg"/>
+    		<ImageBrush Stretch="Fill" ImageSource="/Images/sfondo3.png"/>
     	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -93,13 +93,14 @@
                 </ImageBrush>
             </StackPanel.Background>-->
             <!--ContentPanel - inserire ulteriore contenuto qui-->
-        <ListBox Grid.Row="1" Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" SelectedItem="{Binding Attuale, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+        <StackPanel Grid.Row="1" Margin="0 10 0 0">
+        <ListBox  Height="Auto" Width="Auto" ItemsSource="{Binding ListaLiv}" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
          
             <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                        <Button Tag="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="120" Width="120">
+                        <Button Tag="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="110" Width="120" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" >
                         <Button.Background>
                             <ImageBrush ImageSource="{Binding Avaiable}" />
                         </Button.Background>
@@ -132,7 +133,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <!--</StackPanel>-->
+        </StackPanel>
 
         <!--<Grid x:Name="ContentPanel1" Margin="10,20,10,20" Grid.Row="1">
 

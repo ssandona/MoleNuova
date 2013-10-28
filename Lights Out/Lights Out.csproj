@@ -85,6 +85,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LivelliVM.cs" />
     <Compile Include="ViewModel\LivelloVM.cs" />
+    <Compile Include="Vittoria.xaml.cs">
+      <DependentUpon>Vittoria.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -105,6 +108,9 @@
     </Page>
     <Page Include="PagLivelli.xaml">
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vittoria.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -120,9 +126,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="dll\Microsoft.Phone.Controls.Toolkit.dll" />
-    <Content Include="Images\backprova.jpg" />
-    <Content Include="Images\Campo.png" />
-    <Content Include="Images\locked.png" />
     <Content Include="Images\locked_10.png" />
     <Content Include="Images\locked_11.png" />
     <Content Include="Images\locked_12.png" />
@@ -144,8 +147,9 @@
     <Content Include="Images\locked_9.png" />
     <Content Include="Images\mole_in.png" />
     <Content Include="Images\mole_out.png" />
-    <Content Include="Images\sfondo1.jpg" />
+    <Content Include="Images\mole_question.png" />
     <Content Include="Images\sfondo2.png" />
+    <Content Include="Images\sfondo3.png" />
     <Content Include="Images\unlocked_1.png" />
     <Content Include="Images\unlocked_10.png" />
     <Content Include="Images\unlocked_11.png" />
@@ -166,9 +170,12 @@
     <Content Include="Images\unlocked_7.png" />
     <Content Include="Images\unlocked_8.png" />
     <Content Include="Images\unlocked_9.png" />
+    <Content Include="Images\vittoria.png" />
     <Content Include="livelli.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sounds\pop.mp3" />
+    <Content Include="Sounds\win.mp3" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +189,7 @@
       <Punctuation>True</Punctuation>
     </BlendEmbeddedFont>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

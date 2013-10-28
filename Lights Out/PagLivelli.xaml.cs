@@ -26,9 +26,14 @@ namespace Lights_Out
         private void GoToGame(object sender, RoutedEventArgs e)
         {
             int liv = (int)((Button)sender).Tag;
-            string uri = "/Game.xaml?id=" + liv.ToString();
+            bool ris=((LivelliVM)(this.DataContext)).Avaiable(liv);
+            string uri;
+            if (ris)
+            {
+                uri = "/Game.xaml?id=" + liv.ToString();
 
-            NavigationService.Navigate(new Uri(uri, UriKind.Relative));
+                NavigationService.Navigate(new Uri(uri, UriKind.Relative));
+            }
 
         }
 
@@ -36,7 +41,9 @@ namespace Lights_Out
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             NavigationService.Navigate(new Uri("/MainPage.xaml?Refresh=true", UriKind.Relative));
-        } 
+        }
+
+        
 
 
     }

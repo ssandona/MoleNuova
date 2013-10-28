@@ -86,7 +86,7 @@ namespace Lights_Out.ViewModel
         }
 
         /// METODO: Chiama la Mossa(cellaselezionata) sulla cella && Controlla se il livello è completo && Salva best score
-        public void Move(int CodCella)
+        public bool Move(int CodCella)
         {
             /// muovo sulla cella selezionata
             this.livAttuale.Mossa(CodCella);
@@ -109,11 +109,11 @@ namespace Lights_Out.ViewModel
                 /// Aggiungi nuovo best score
                 appSettings.Add("bestscore" + livAttuale.Id, livAttuale.Best_Score);
 
-                /// Avverto vittoria DA MIGLIORARE
-                MessageBox.Show("Ti ga vinto more!");
-                
+                return true;
+
 
             }
+            else return false;
 
 
 

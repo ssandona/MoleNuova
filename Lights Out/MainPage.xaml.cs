@@ -42,19 +42,14 @@ namespace Lights_Out
         //Premendo il Back button chiedo se si è sicuri di uscire. Se si non torno alla pagina di prima ma esco dall'applicazione (cancello la storia delle pagine navigate)
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult m = MessageBox.Show("Sei sicuro?", "Esci dal gioco", MessageBoxButton.OKCancel);
-            if (m == MessageBoxResult.OK)
+            while (NavigationService.CanGoBack)
             {
-                while (NavigationService.CanGoBack)
-                {
-                    NavigationService.RemoveBackEntry();
-                }
+                NavigationService.RemoveBackEntry();
             }
-            else e.Cancel = true;
-            
-           
-        } 
-        
+
+        }
+
+       
     }
 
 }

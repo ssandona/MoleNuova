@@ -43,6 +43,12 @@ namespace Lights_Out.ViewModel
             }
         }
 
+        public bool Avaiable(int num) {
+            if (listaLiv[num - 1].isAvaiable())
+                return true;
+            else return false;
+        }
+
         /// METODO: Carica i livelli dentro la lista
         public List<int> caricaLivelli()
         {

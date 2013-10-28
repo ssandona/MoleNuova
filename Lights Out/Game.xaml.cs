@@ -49,21 +49,57 @@ namespace Lights_Out
         //Al click del back button chiedo se si è sicuri di uscire. Se si torno alla pagina dei livelli a cui applico un refresh
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult m=MessageBox.Show("Sei sicuro?", "Esci dal livello", MessageBoxButton.OKCancel);
+            if (vittoria.IsOpen) { }
+            else torna.IsOpen = true;
+                
+            
+            /*MessageBoxResult m=MessageBox.Show("Sei sicuro?", "Esci dal livello", MessageBoxButton.OKCancel);
             if(m==MessageBoxResult.OK)
             {
                 NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
             }
-            else e.Cancel = true;
+            else*/ 
+            e.Cancel = true;
             
-        }  
+        }
+
+        private void continua(object sender, RoutedEventArgs e)
+        {
+            torna.IsOpen = false;
+        }
+
 
         /// METODO: invoca il movimento sul bottone selezionato
         private void Go(object sender, RoutedEventArgs e)
         {
             string c = ((Button)sender).Tag.ToString();
             int n = Convert.ToInt32(c);
-            ((LivelloVM)this.DataContext).Move(n);
+            bool vitt=((LivelloVM)this.DataContext).Move(n);
+            mole_sound.Play();
+            if (vitt)
+            {
+                win_sound.Play();
+                vittoria.IsOpen = true;
+            }
         }
+
+        private void back(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
+        }
+
+        private void next_level(object sender, RoutedEventArgs e)
+        {
+            string liv = id.Text;
+            int next = Convert.ToInt32(liv) + 1;
+            string uri;
+            if(next<=20)
+             uri = "/Game.xaml?id=" + next;
+            else uri = "/MainPage.xaml";
+
+            NavigationService.Navigate(new Uri(uri, UriKind.Relative));
+        }
+
+
     }
 }
