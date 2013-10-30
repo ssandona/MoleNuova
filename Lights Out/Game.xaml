@@ -109,25 +109,55 @@
         </StackPanel>
 
         <Popup x:Name="vittoria" Grid.Row="1" >
-            <Border  BorderThickness="2" Margin="10 0 10 0" BorderBrush="{StaticResource PhoneAccentBrush}">
-                <StackPanel Background="LightBlue" Height="490" Width="460">             
+            <Border  BorderThickness="2" Margin="10 0 10 0" Width="463">
+            	<Border.BorderBrush>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<GradientStop Color="White" Offset="0"/>
+            			<GradientStop Color="#FF397236" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Border.BorderBrush>
+            	<Border.Background>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<GradientStop Color="Black" Offset="0"/>
+            			<GradientStop Color="#FF14DE00" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Border.Background>
+                <StackPanel Height="490" Width="460">
+                	<StackPanel.Background>
+                		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                			<GradientStop Color="#FF25A000" Offset="0"/>
+                			<GradientStop Color="#FF071D00" Offset="1"/>
+                		</LinearGradientBrush>
+                	</StackPanel.Background>             
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/vittoria.png" HorizontalAlignment="Center" Stretch="Uniform" Width="250" />
-                    <TextBlock Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="40" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
-                    <Button Grid.Row="2" x:Name="btn_continue"  Content="Continue" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="next_level"/>
+                    <TextBlock Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="53.333" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
+                    <Button Grid.Row="2" x:Name="btn_continue"  Content="Continua" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Click="next_level" Height="105" Margin="105,0" BorderThickness="3" FontSize="33.333"/>
 
                 </StackPanel>
             </Border>
         </Popup>
 
-        <Popup x:Name="torna" Grid.Row="1">
-            <Border  BorderThickness="2" Margin="10 0 10 0" BorderBrush="{StaticResource PhoneAccentBrush}">
-                <StackPanel  Background="LightBlue" Height="490" Width="460" >
+        <Popup x:Name="torna" Grid.Row="1" HorizontalAlignment="Left" Width="460" Margin="10,0,0,0">
+            <Border  BorderThickness="4" Margin="10 0 10 0" Width="440">
+            	<Border.BorderBrush>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<GradientStop Color="#FF14AA21" Offset="0"/>
+            			<GradientStop Color="#FF022905" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Border.BorderBrush>
+                <StackPanel Height="490" Margin="-4,0" >
+                	<StackPanel.Background>
+                		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                			<GradientStop Color="#FF509B25" Offset="1"/>
+                			<GradientStop Color="#FFCEDCC6"/>
+                		</LinearGradientBrush>
+                	</StackPanel.Background>
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/mole_question.png" HorizontalAlignment="Center" Stretch="Uniform" Width="200" />
-                    <TextBlock Text="Esci dal livello" TextAlignment="Center" FontSize="40" Margin="10,0" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" />
-                    <TextBlock Text="Sei sicuro?" FontSize="21" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
+                    <TextBlock Text="Esci dal livello" TextAlignment="Center" FontSize="40" Margin="10,0" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Foreground="Black" Height="52" />
+                    <TextBlock Text="Sei sicuro?" FontSize="30.667" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" Foreground="Black" />
                     <StackPanel Orientation="Horizontal" Margin="0,10">
-                        <Button x:Name="btn_back"  Content="SI" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="back" />
-                        <Button x:Name="btn_cancel"    Content="NO"  FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="continua"/>
+                        <Button x:Name="btn_back"  Content="SI" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="back" Foreground="Black" BorderBrush="Black" Height="97" FontSize="40" FontWeight="Bold" />
+                        <Button x:Name="btn_cancel"    Content="NO"  FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Width="215" Click="continua" Background="Transparent" Foreground="Black" BorderBrush="Black" FontSize="40" FontWeight="Bold"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
