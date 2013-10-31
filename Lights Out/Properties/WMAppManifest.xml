@@ -24,7 +24,7 @@
     <Tokens>
       <PrimaryToken TokenID="Lights_OutToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">ApplicationIcon.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Images\vittoria.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>Mole Out</Title>
         </TemplateType5>
