@@ -95,15 +95,7 @@ namespace PhoneApp1
         }
 
 
-        /// <summary>
-        /// resetta il bestscore del livello
-        /// </summary>
-        public void resetBestScore()
-        {
-            if (appSettings.Contains("bestscore" + id))
-                appSettings["bestscore" + id] = "-";
-            return;
-        }
+       
 
         /// METODO: ritorna se un livello è sbloccato o bloccato guardando il precedente (?)
         public bool isAvaiable() {

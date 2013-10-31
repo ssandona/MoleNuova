@@ -49,6 +49,11 @@ namespace Lights_Out
 
         }
 
+        private void Altro_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/altro.xaml", UriKind.Relative));
+        }
+
        
     }
 

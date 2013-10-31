@@ -64,6 +64,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="altro.xaml.cs">
+      <DependentUpon>altro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="altro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Game.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,7 +122,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +157,7 @@
     <Content Include="Images\mole_in.png" />
     <Content Include="Images\mole_out.png" />
     <Content Include="Images\mole_question.png" />
+    <Content Include="Images\no1.png" />
     <Content Include="Images\sfondo2.png" />
     <Content Include="Images\sfondo3.png" />
     <Content Include="Images\unlocked_1.png" />

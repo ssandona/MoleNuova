@@ -91,8 +91,10 @@ namespace Lights_Out.ViewModel
             /// muovo sulla cella selezionata
             this.livAttuale.Mossa(CodCella);
             
-            /// aumenta il numero di mosse
+            // aumenta il numero di mosse
             this.addMossa();
+
+            aumentaMosseTotali();
 
             /// se il livello attuale è completo
             if (livAttuale.Completo())
@@ -117,6 +119,18 @@ namespace Lights_Out.ViewModel
 
 
 
+        }
+
+        private void aumentaMosseTotali()
+        {
+            if (appSettings.Contains("mossetotali"))
+            {
+                string mosse = appSettings["mossetotali"].ToString();
+                int mossetotali = Convert.ToInt32(mosse);
+                mossetotali++;
+                appSettings["mossetotali"] = mossetotali;
+            }
+            else appSettings.Add("mossetotali","0");
         }
 
         /// METODO: Implementa interfaccia Notify    

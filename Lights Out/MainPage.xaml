@@ -105,7 +105,7 @@
 				Grid.Row="2" 
 				Grid.Column="0" 
 				FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
-				FontSize="66.667"/>
+				FontSize="66.667" Click="Altro_Click"/>
 		</Grid>
 
 
