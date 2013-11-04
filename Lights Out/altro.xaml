@@ -25,10 +25,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Style="{StaticResource PhoneTextNormalStyle}">
-            	<Run Text="M"/>
-            	<Run Text="OLE OUT"/>
-            </TextBlock>
+            <TextBlock Text="MOLE OUT" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="altro" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"/>
         </StackPanel>
 
@@ -37,7 +34,6 @@
             <Button Name="resetGame" Content="Resetta gioco" Margin="12,337,0,0" VerticalAlignment="Top" Height="136" FontSize="35" Click="resetGame_Click"/>
             <TextBlock Text="Come giocare?" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" FontSize="25" FontWeight="Bold" />
             <TextBlock Text="Mosse fatte: " Margin="12,247,334,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-
             <TextBlock Name="mossefatte" Margin="127,247,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27"/>
             <TextBlock Text="L'obbiettivo del gioco è di rimuovere tutte le talpe da tutti i livelli, premendo su una talpa (o un buco) si cambierà lo stato della cella premuta e delle 4 adiacenti, come nel celebre gioco &quot;Lights Out&quot;." Margin="12,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <TextBlock Margin="12,185,10,0" TextWrapping="Wrap" Text="Si possono sbloccare i livelli successivi solo vincendo i livelli precedenti." VerticalAlignment="Top"/>

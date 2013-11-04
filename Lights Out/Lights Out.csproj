@@ -200,6 +200,7 @@
     </BlendEmbeddedFont>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="mole_question.png" />
     <Resource Include="sfumatura1.png" />
     <Resource Include="sfumatura2.png" />
   </ItemGroup>
