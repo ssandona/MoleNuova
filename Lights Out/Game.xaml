@@ -124,10 +124,7 @@
             	</Border.Background>
                 <StackPanel Height="490" Width="460">
                 	<StackPanel.Background>
-                		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                			<GradientStop Color="#FF25A000" Offset="0"/>
-                			<GradientStop Color="#FF071D00" Offset="1"/>
-                		</LinearGradientBrush>
+                		<ImageBrush Stretch="Fill" ImageSource="sfumatura1.png"/>
                 	</StackPanel.Background>             
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/vittoria.png" HorizontalAlignment="Center" Stretch="Uniform" Width="250" />
                     <TextBlock Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="53.333" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
@@ -147,10 +144,7 @@
             	</Border.BorderBrush>
                 <StackPanel Height="490" Margin="-4,0" >
                 	<StackPanel.Background>
-                		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                			<GradientStop Color="#FF509B25" Offset="1"/>
-                			<GradientStop Color="#FFCEDCC6"/>
-                		</LinearGradientBrush>
+                		<ImageBrush Stretch="Fill" ImageSource="sfumatura2.png"/>
                 	</StackPanel.Background>
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/mole_question.png" HorizontalAlignment="Center" Stretch="Uniform" Width="200" />
                     <TextBlock Text="Esci dal livello" TextAlignment="Center" FontSize="40" Margin="10,0" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Foreground="Black" Height="52" />
