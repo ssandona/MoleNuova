@@ -19,7 +19,7 @@ namespace Lights_Out
         public PagLivelli()
         {
             InitializeComponent();
-            this.DataContext = new LivelliVM();
+            this.DataContext = App.livelliVM();
         }
 
         /// METODO: passa ad un altra pagina

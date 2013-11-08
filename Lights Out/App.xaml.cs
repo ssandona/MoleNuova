@@ -81,6 +81,10 @@ namespace Lights_Out
             return livelli.getLivello(id);
         }
 
+        public static LivelliVM livelliVM(){
+            return livelli;
+        }
+
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
