@@ -39,8 +39,8 @@ namespace Lights_Out.ViewModel
 
             celle = new ObservableCollection<Cella>();
 
-            livAttuale = new Livello(i);
-
+            livAttuale = App.getLivello(i);
+            livAttuale.reset();
             /*successivo = new Livello(i+1);*/
 
             /// assegno alla lista, la lista del livello tramite getter

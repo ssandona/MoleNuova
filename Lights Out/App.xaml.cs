@@ -13,6 +13,8 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
+using Lights_Out.ViewModel;
+using PhoneApp1;
 
 namespace Lights_Out
 {
@@ -29,7 +31,7 @@ namespace Lights_Out
         // Creazione dei campi statici che sono dei Brush contenenti la foto rispettivamente della talpa fuori e dentro
         public static ImageBrush mole_in = new ImageBrush();
         public static ImageBrush mole_out = new ImageBrush();
-
+        public static LivelliVM livelli;
           
 
 
@@ -74,10 +76,16 @@ namespace Lights_Out
 
         }
 
+        public static Livello getLivello(int id)
+        {
+            return livelli.getLivello(id);
+        }
+
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            livelli = new LivelliVM();
         }
 
         // Code to execute when the application is activated (brought to foreground)

@@ -15,11 +15,18 @@ namespace Lights_Out.Model
 
         /// VAR: stato della cella
         private bool stato;
+        private bool initial_state;
 
         /// COSTRUTTORE: prende un id ed uno stato
         public Cella(int cod, bool st) {
             this.stato = st;
+            this.initial_state = st;
             this.id = cod;
+        }
+
+        public void reset() {
+            stato = initial_state;
+            RaisePropertyChanged("Sfondo");
         }
 
         /// GETTER: return id

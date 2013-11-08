@@ -50,6 +50,11 @@ namespace PhoneApp1
                 else best_score="-";
         }
 
+        public void reset() {
+            foreach (Cella c in celle)
+                c.reset();
+        }
+
         /// GETTER: ritorna celle (?)
         public ObservableCollection<Cella> Scacchiera{
             get {

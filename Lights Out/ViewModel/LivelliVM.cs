@@ -43,6 +43,11 @@ namespace Lights_Out.ViewModel
             }
         }
 
+        public Livello getLivello(int id)
+        {
+            return listaLiv[id - 1];
+        }
+
         public bool Avaiable(int num) {
             if (listaLiv[num - 1].isAvaiable())
                 return true;
