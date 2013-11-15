@@ -50,7 +50,9 @@ namespace Lights_Out
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             if (vittoria.IsOpen) { }
-            else torna.IsOpen = true;
+            else if (torna.IsOpen) { }
+                else torna.IsOpen = true;
+
                 
             
             /*MessageBoxResult m=MessageBox.Show("Sei sicuro?", "Esci dal livello", MessageBoxButton.OKCancel);

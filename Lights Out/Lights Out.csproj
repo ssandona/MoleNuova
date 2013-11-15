@@ -80,7 +80,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Cella.cs" />
-    <Compile Include="Model\Livelli.cs" />
     <Compile Include="Model\Livello.cs" />
     <Compile Include="PagLivelli.xaml.cs">
       <DependentUpon>PagLivelli.xaml</DependentUpon>
@@ -88,9 +87,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LivelliVM.cs" />
     <Compile Include="ViewModel\LivelloVM.cs" />
-    <Compile Include="Vittoria.xaml.cs">
-      <DependentUpon>Vittoria.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -115,10 +111,6 @@
     </Page>
     <Page Include="PagLivelli.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Vittoria.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
