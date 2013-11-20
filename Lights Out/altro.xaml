@@ -31,7 +31,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Name="resetGame" Content="Resetta gioco" Margin="12,337,0,0" VerticalAlignment="Top" Height="136" FontSize="35" Click="resetGame_Click"/>
+            <Button Name="resetGame" Content="Ricomincia Gioco" Margin="12,337,0,0" VerticalAlignment="Top" Height="136" FontSize="35" Click="resetGame_Click"/>
             <TextBlock Text="Come giocare?" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" FontSize="25" FontWeight="Bold" />
             <TextBlock Text="Mosse fatte: " Margin="12,247,334,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <TextBlock Name="mossefatte" Margin="127,247,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27"/>
