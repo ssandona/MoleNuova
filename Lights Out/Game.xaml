@@ -80,7 +80,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel1" Grid.Row="0" Margin="10,15,0,25">
-            <TextBlock x:Name="ApplicationTitle1" Text="MOLE OUT" FontFamily="Perpetua"
+            <TextBlock Foreground="White" x:Name="ApplicationTitle1" Text="MOLE OUT" FontFamily="Perpetua"
                        FontSize="26.667"/>
             <Grid x:Name="Liv">
                 
@@ -95,12 +95,13 @@
                        x:Name="PageTitle1" 
                        Text="livello" 
                        FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
-                       FontSize="80" Margin="0,0,10,0" Grid.ColumnSpan="2"/>
+                       Foreground="White" FontSize="80" Margin="0,0,10,0" Grid.ColumnSpan="2"/>
                 
                 <TextBlock x:Name="id" 
                        Grid.Column="2" 
                        Text="{Binding LivAttuale.Id}" 
-                       FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
+                       Foreground="White"
+                        FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
                        FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 
             </Grid>
@@ -124,8 +125,8 @@
                 		<ImageBrush Stretch="Fill" ImageSource="sfumatura1.png"/>
                 	</StackPanel.Background>             
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/vittoria.png" HorizontalAlignment="Center" Stretch="Uniform" Width="250" />
-                    <TextBlock Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="53.333" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
-                    <Button Grid.Row="2" x:Name="btn_continue"  Content="Continua" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Click="next_level" Height="105" Margin="105,0" BorderThickness="3" FontSize="33.333"/>
+                    <TextBlock Foreground="White" Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="53.333" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
+                    <Button Foreground="White" Grid.Row="2" x:Name="btn_continue"  Content="Continua" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Click="next_level" Height="105" Margin="105,0" BorderThickness="3" FontSize="33.333" BorderBrush="White"/>
 
                 </StackPanel>
             </Border>
@@ -223,6 +224,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock HorizontalAlignment="Right" 
+                       Foreground="White"
                        VerticalAlignment="Center" 
                        Text="mosse" 
                        Grid.Column="0" 
@@ -231,6 +233,7 @@
                        FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="0,1,83,10" FontWeight="Bold"/>
            
             <TextBlock Name="num_mosse" 
+                       Foreground="White"
                        HorizontalAlignment="Center" 
                        Text="{Binding Mosse}" 
                        Grid.Column="1" 

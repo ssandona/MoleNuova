@@ -25,13 +25,13 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MOLE OUT" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="informazioni" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"/>
+            <TextBlock Foreground="White" Text="MOLE OUT" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Foreground="White" Text="informazioni" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="342" Width="436" FontSize="22">
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="342" Width="436" FontSize="22">
             	<Run Text="App sviluppata nell'ambito del progetto di Software Engineering, corso tenuto dal professor Cortesi di Ca' Foscari (A.A. 2013/2014)."/>
             	<LineBreak/>
             	<Run/>
@@ -52,7 +52,7 @@
             	<LineBreak/>
             	<Run/>
             </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="10,518,0,0" TextWrapping="Wrap" Text="Grazie per aver scaricato &quot;Mole Out&quot; e buon divertimento!" VerticalAlignment="Top" Width="436" Height="96" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" FontSize="33" TextAlignment="Center"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10,518,0,0" TextWrapping="Wrap" Text="Grazie per aver scaricato &quot;Mole Out&quot; e buon divertimento!" VerticalAlignment="Top" Width="436" Height="96" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" FontSize="33" TextAlignment="Center"/>
             <Image Height="198" Margin="114,336,114,0" VerticalAlignment="Top" Source="/Images/no1.png" Opacity="0.8"/>
 
         </Grid>

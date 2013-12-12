@@ -82,9 +82,9 @@
         <!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
         <StackPanel Grid.Row="0" Margin="10,15,0,25">
             <TextBlock Text="MOLE OUT" FontFamily="Perpetua"
-                       FontSize="26.667"/>
+                       Foreground="White" FontSize="26.667"/>
             <TextBlock Text="livelli" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
-                       FontSize="86.667"/>
+                       Foreground="White" FontSize="86.667"/>
         </StackPanel>
         <!--<StackPanel Grid.Row="1" Height="Auto">-->
             <!--<StackPanel.Background>

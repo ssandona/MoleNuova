@@ -54,7 +54,8 @@
         <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock x:Name="PageTitle" 
-				Text="Mole Out" 
+				Foreground="White"
+                Text="Mole Out" 
 				Margin="9,7,0,0" 
 				FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
 				FontSize="116"/>
@@ -81,7 +82,8 @@
 				Grid.Column="0" 
 				Click="Inizia_Click" 
 				FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
-				FontSize="66.667" Foreground="White"/>
+				FontSize="66.667"
+                Foreground="White"/>
             
 			<Button x:Name="Informazioni" 
 				Content="Informazioni" 
@@ -90,7 +92,8 @@
 				Grid.Row="1" 
 				Grid.Column="0" 
 				FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
-				FontSize="60" Click="Informazioni_Click">
+				Foreground="White"
+                FontSize="60" Click="Informazioni_Click">
 				<i:Interaction.Triggers>
 					<i:EventTrigger EventName="Click">
 						<ec:NavigateToPageAction TargetPage="/Info.xaml"/>
@@ -104,7 +107,8 @@
 				Background="Transparent"   
 				Grid.Row="2" 
 				Grid.Column="0" 
-				FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
+				Foreground="White"
+                FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch"
 				FontSize="66.667" Click="Altro_Click"/>
 		</Grid>
 
