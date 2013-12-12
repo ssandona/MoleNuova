@@ -12,7 +12,8 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True" Background="#00000000">
+    shell:SystemTray.IsVisible="True" Background="#00000000"
+    Name="This">
     <phone:PhoneApplicationPage.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -109,7 +110,7 @@
                  
         </StackPanel>
 
-        <Popup x:Name="vittoria" Grid.Row="1" >
+        <Popup x:Name="vittoria" Grid.Row="1" IsOpen="{Binding Vittoria}">
             <Border  BorderThickness="2" Margin="10 0 10 0" Width="466">
             	<Border.BorderBrush>
             		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -126,7 +127,7 @@
                 	</StackPanel.Background>             
                     <Image Margin="0 30 0 20" Grid.Row="0" Source="/Images/vittoria.png" HorizontalAlignment="Center" Stretch="Uniform" Width="250" />
                     <TextBlock Foreground="White" Grid.Row="1" Text="Hai Vinto" TextAlignment="Center" FontSize="53.333" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Margin="10,0" />
-                    <Button Foreground="White" Grid.Row="2" x:Name="btn_continue"  Content="Continua" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Click="next_level" Height="105" Margin="105,0" BorderThickness="3" FontSize="33.333" BorderBrush="White"/>
+                    <Button Foreground="White" Grid.Row="2" x:Name="btn_continue"  Content="Continua" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" Command="{Binding LivelloSuccessivo}" Height="105" Margin="105,0" BorderThickness="3" FontSize="33.333" BorderBrush="White"/>
 
                 </StackPanel>
             </Border>
@@ -166,7 +167,7 @@
         <MediaElement 
     x:Name="win_sound" 
     Source="Sounds/win.mp3" 
-    AutoPlay="False" />
+    AutoPlay="False"  />
         <!-- CAMPO DI GIOCO-->
         <StackPanel Grid.Row="1">
             
@@ -181,7 +182,8 @@
                            <Button Tag="{Binding Id}" 
                                    Margin="-7" 
                                    BorderThickness="0"  
-                                   Click="Go" 
+                                   Command="{Binding ElementName=This, Path=DataContext.EseguiMossa}" 
+                                   CommandParameter="{Binding}" 
                                    Width="110" 
                                    Height="110">
                                

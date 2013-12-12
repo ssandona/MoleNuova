@@ -12,7 +12,8 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    Name="This">
     <phone:PhoneApplicationPage.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -100,7 +101,7 @@
                     <DataTemplate>
                         <!--<StackPanel Orientation="Horizontal">-->
                             <!--<TextBlock Text="Livello:"/>-->
-                        <Button Tag="{Binding Id}" BorderThickness="0" Click="GoToGame" Height="110" Width="120" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" >
+                        <Button Tag="{Binding Id}" BorderThickness="0" Command="{Binding ElementName=This, Path=DataContext.GoToGame}" CommandParameter="{Binding}"  Height="110" Width="120" FontFamily="/Lights Out;component/Fonts/Fonts.zip#Buxton Sketch" >
                         <Button.Background>
                             <ImageBrush ImageSource="{Binding Avaiable}" />
                         </Button.Background>

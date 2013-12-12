@@ -22,20 +22,6 @@ namespace Lights_Out
             this.DataContext = App.livelliVM();
         }
 
-        /// METODO: passa ad un altra pagina
-        private void GoToGame(object sender, RoutedEventArgs e)
-        {
-            int liv = (int)((Button)sender).Tag;
-            bool ris=((LivelliVM)(this.DataContext)).Avaiable(liv);
-            string uri;
-            if (ris)
-            {
-                uri = "/Game.xaml?id=" + liv.ToString();
-
-                NavigationService.Navigate(new Uri(uri, UriKind.Relative));
-            }
-
-        }
 
         //Premendo il Back button voglio tornare alla main page e non nella pagina prima
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)

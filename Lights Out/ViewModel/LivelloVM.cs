@@ -9,6 +9,7 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Lights_Out.ViewModel
 {
@@ -30,7 +31,34 @@ namespace Lights_Out.ViewModel
         /// VAR: Numero di mosse
         private int mosse;
 
-        /*private Livello successivo;*/
+        private bool vittoria;
+        public bool Vittoria {
+            get {
+                return vittoria;
+            }
+            set {
+                if (value != vittoria) {
+                    vittoria = value;
+                    RaisePropertyChanged("Vittoria");
+                }
+            }
+        }
+
+        private ICommand livelloSuccessivo;
+        public ICommand LivelloSuccessivo {
+            get {
+                return livelloSuccessivo;
+            }
+        }
+
+        private ICommand eseguiMossa;
+        public ICommand EseguiMossa
+        {
+            get
+            {
+                return eseguiMossa;
+            }
+        }
 
         /// COSTRUTTORE: Prende il numero del livello
         public LivelloVM(int i)
@@ -48,6 +76,36 @@ namespace Lights_Out.ViewModel
 
             /// mosse iniziali a 0
             mosse = 0;
+            livelloSuccessivo = new DelegateCommand(prossimoLivello);
+            eseguiMossa = new DelegateCommand(Go);
+            vittoria = false;
+        }
+
+        /// eventi da lanciare per il play dei suoni (ascoltati poi nella view)
+        public event EventHandler PlayVittoriaSound;
+        public event EventHandler PlayMoleSound;
+
+
+
+        private void Go(object o)
+        {
+            bool vitt=this.Move((Cella)o);
+            this.PlayMoleSound(this, EventArgs.Empty);
+            if (vitt)
+            {
+                this.PlayVittoriaSound(this, EventArgs.Empty);
+                Vittoria = true;
+            }
+        }
+
+        private void prossimoLivello(object o) {
+            int next = livAttuale.Id + 1;
+            string uri;
+            if (next <= 20)
+                uri = "/Game.xaml?id=" + next;
+            else uri = "/MainPage.xaml";
+            var rootFrame = (App.Current as App).RootFrame;
+            rootFrame.Navigate(new Uri(uri, UriKind.Relative));
         }
 
         /// GETTER: var celle
@@ -86,8 +144,9 @@ namespace Lights_Out.ViewModel
         }
 
         /// METODO: Chiama la Mossa(cellaselezionata) sulla cella && Controlla se il livello è completo && Salva best score
-        public bool Move(int CodCella)
+        public bool Move(Cella c)
         {
+            int CodCella=c.Id;
             /// muovo sulla cella selezionata
             this.livAttuale.Mossa(CodCella);
             

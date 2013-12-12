@@ -37,13 +37,20 @@ namespace Lights_Out
 
                 /// crea un nuovo DataContext con il LivelloVM(id) per il binding
                 this.DataContext = new LivelloVM(a);
+                LivelloVM vm = (LivelloVM)this.DataContext;
+
+                ///associo all'evento PlaySounds il play dei vari media elements
+                vm.PlayMoleSound += (sender, ev) =>
+                {
+                    this.mole_sound.Play();
+                };
+
+                vm.PlayVittoriaSound += (sender, ev) =>
+                {
+                    this.win_sound.Play();
+                };
             }
 
-            /*if (e.NavigationMode == NavigationMode.Back)
-                {
-                    MessageBox.Show("Te piasaria");
-            NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
-              }*/
         }
 
         //Al click del back button chiedo se si è sicuri di uscire. Se si torno alla pagina dei livelli a cui applico un refresh
@@ -53,14 +60,6 @@ namespace Lights_Out
             else if (torna.IsOpen) { }
                 else torna.IsOpen = true;
 
-                
-            
-            /*MessageBoxResult m=MessageBox.Show("Sei sicuro?", "Esci dal livello", MessageBoxButton.OKCancel);
-            if(m==MessageBoxResult.OK)
-            {
-                NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
-            }
-            else*/ 
             e.Cancel = true;
             
         }
@@ -71,36 +70,12 @@ namespace Lights_Out
         }
 
 
-        /// METODO: invoca il movimento sul bottone selezionato
-        private void Go(object sender, RoutedEventArgs e)
-        {
-            string c = ((Button)sender).Tag.ToString();
-            int n = Convert.ToInt32(c);
-            bool vitt=((LivelloVM)this.DataContext).Move(n);
-            mole_sound.Play();
-            if (vitt)
-            {
-                win_sound.Play();
-                vittoria.IsOpen = true;
-            }
-        }
 
         private void back(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/PagLivelli.xaml?Refresh=true", UriKind.Relative));
         }
 
-        private void next_level(object sender, RoutedEventArgs e)
-        {
-            string liv = id.Text;
-            int next = Convert.ToInt32(liv) + 1;
-            string uri;
-            if(next<=20)
-             uri = "/Game.xaml?id=" + next;
-            else uri = "/MainPage.xaml";
-
-            NavigationService.Navigate(new Uri(uri, UriKind.Relative));
-        }
 
 
     }

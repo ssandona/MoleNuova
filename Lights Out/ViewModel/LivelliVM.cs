@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 using System.Xml.Linq;
 
 
@@ -21,6 +22,13 @@ namespace Lights_Out.ViewModel
         /// VAR: lista di livelli
         private ObservableCollection<Livello> listaLiv;
 
+        private ICommand goToGame;
+        public ICommand GoToGame {
+            get {
+                return goToGame;
+            }
+        }
+
         /// COSTRUTTORE: carica dallo xml una lista di id e crea i livelli in base all'id
         public LivelliVM() {
            
@@ -34,6 +42,7 @@ namespace Lights_Out.ViewModel
             {
                 listaLiv.Add(new Livello(id));
             }
+            goToGame = new DelegateCommand(VaiALivello);
         }
 
         /// GETTER: listaLiv
@@ -78,6 +87,20 @@ namespace Lights_Out.ViewModel
             }
             return lista;
 
+        }
+
+        public void VaiALivello(object o) { 
+            int liv=((Livello)o).Id;
+            bool ris=this.Avaiable(liv);
+            string uri;
+            if (ris)
+            {
+                uri = "/Game.xaml?id=" + liv.ToString();
+
+                var rootFrame = (App.Current as App).RootFrame;
+                rootFrame.Navigate(new Uri(uri, UriKind.Relative));
+            }
+        
         }
 
         /// METODO: Per i figli di ogni tag livello dammi la proprieta id
