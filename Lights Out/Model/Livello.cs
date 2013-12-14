@@ -102,9 +102,6 @@ namespace PhoneApp1
 
         }
 
-
-       
-
         /// METODO: ritorna se un livello è sbloccato o bloccato guardando il precedente (?)
         public bool isAvaiable() {
 
