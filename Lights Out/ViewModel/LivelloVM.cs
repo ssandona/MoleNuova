@@ -67,14 +67,20 @@ namespace Lights_Out.ViewModel
 
             livAttuale = App.getLivello(i);
             livAttuale.reset();
+<<<<<<< HEAD
             /*successivo = new Livello(i+1);*/
             // assegno alla lista, la lista del livello tramite getter
+=======
+          
+
+            /// assegno alla lista, la lista del livello tramite getter
+>>>>>>> 1006c035a4ab032033847300e31c8f34d655ec3b
             celle = livAttuale.Scacchiera;
 
             // mosse iniziali a 0
             mosse = 0;
-            livelloSuccessivo = new DelegateCommand(prossimoLivello);
-            eseguiMossa = new DelegateCommand(Go);
+            livelloSuccessivo = new DelegateCommand(_livelloSuccessivo);
+            eseguiMossa = new DelegateCommand(_eseguiMossa);
             vittoria = false;
         }
 
@@ -84,7 +90,7 @@ namespace Lights_Out.ViewModel
 
 
 
-        private void Go(object o)
+        private void _eseguiMossa(object o)
         {
             bool vitt=this.Move((Cella)o);
             this.PlayMoleSound(this, EventArgs.Empty);
@@ -95,7 +101,7 @@ namespace Lights_Out.ViewModel
             }
         }
 
-        private void prossimoLivello(object o) {
+        private void _livelloSuccessivo(object o) {
             int next = livAttuale.Id + 1;
             string uri;
             if (next <= 20)

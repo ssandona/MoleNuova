@@ -28,7 +28,7 @@ namespace PhoneApp1
 
         /// VAR: variabile per l'id del livello
         private int id;
-        
+
         /// COSTRUTTORE: Prende il cod che è l'id del livello
         public Livello(int cod)
         {
@@ -36,7 +36,10 @@ namespace PhoneApp1
 
             this.id = cod;
 
-            List<bool> ce = caricaLivello(cod);
+            Loader loader = new Loader();
+
+            List<bool> ce= loader.caricaLivello(cod);
+
             int i = 0;
             foreach (bool b in ce) { 
             celle.Add(new Cella(i,b));
@@ -98,9 +101,6 @@ namespace PhoneApp1
             }
 
         }
-
-
-       
 
         /// METODO: ritorna se un livello è sbloccato o bloccato guardando il precedente (?)
         public bool isAvaiable() {
@@ -236,6 +236,7 @@ namespace PhoneApp1
             return true;
         }
 
+<<<<<<< HEAD
         /// METODO: carica il livello con id corrispondente e ritorna una lista di configurazione booleana
         public List<bool> caricaLivello(int id)
         {
@@ -279,6 +280,8 @@ namespace PhoneApp1
 
             return pos.First();
         }
+=======
+>>>>>>> 1006c035a4ab032033847300e31c8f34d655ec3b
 
         /// METODO : implementazione interfaccia Nofity
         public event PropertyChangedEventHandler PropertyChanged;

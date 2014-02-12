@@ -82,6 +82,7 @@
     <Compile Include="Model\Cella.cs" />
     <Compile Include="Model\DelegateCommand.cs" />
     <Compile Include="Model\Livello.cs" />
+    <Compile Include="Model\Loader.cs" />
     <Compile Include="PagLivelli.xaml.cs">
       <DependentUpon>PagLivelli.xaml</DependentUpon>
     </Compile>

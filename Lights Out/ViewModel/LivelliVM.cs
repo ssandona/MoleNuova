@@ -42,7 +42,7 @@ namespace Lights_Out.ViewModel
             {
                 listaLiv.Add(new Livello(id));
             }
-            goToGame = new DelegateCommand(VaiALivello);
+            goToGame = new DelegateCommand(_goToGame);
         }
 
         /// GETTER: listaLiv
@@ -89,7 +89,7 @@ namespace Lights_Out.ViewModel
 
         }
 
-        public void VaiALivello(object o) { 
+        public void _goToGame(object o) { 
             int liv=((Livello)o).Id;
             bool ris=this.Avaiable(liv);
             string uri;
