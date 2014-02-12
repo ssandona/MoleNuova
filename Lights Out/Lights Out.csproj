@@ -16,8 +16,7 @@
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures>it%3bit-CH</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>Lights_Out.xap</XapFilename>
@@ -53,6 +52,7 @@
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -115,6 +115,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Lights_Out_2014_02_03_23_11_59.sap" />
+    <None Include="Lights_Out_2014_02_03_23_17_29.sap" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -177,8 +179,8 @@
     <Content Include="livelli.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Sounds\pop.mp3" />
-    <Content Include="Sounds\win.mp3" />
+    <Content Include="Sounds\pop.wav" />
+    <Content Include="Sounds\win.wav" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

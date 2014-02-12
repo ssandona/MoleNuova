@@ -60,28 +60,25 @@ namespace Lights_Out.ViewModel
             }
         }
 
-        /// COSTRUTTORE: Prende il numero del livello
+        // COSTRUTTORE: Prende il numero del livello
         public LivelloVM(int i)
         {
-
-
             celle = new ObservableCollection<Cella>();
 
             livAttuale = App.getLivello(i);
             livAttuale.reset();
             /*successivo = new Livello(i+1);*/
-
-            /// assegno alla lista, la lista del livello tramite getter
+            // assegno alla lista, la lista del livello tramite getter
             celle = livAttuale.Scacchiera;
 
-            /// mosse iniziali a 0
+            // mosse iniziali a 0
             mosse = 0;
             livelloSuccessivo = new DelegateCommand(prossimoLivello);
             eseguiMossa = new DelegateCommand(Go);
             vittoria = false;
         }
 
-        /// eventi da lanciare per il play dei suoni (ascoltati poi nella view)
+        // eventi da lanciare per il play dei suoni (ascoltati poi nella view)
         public event EventHandler PlayVittoriaSound;
         public event EventHandler PlayMoleSound;
 

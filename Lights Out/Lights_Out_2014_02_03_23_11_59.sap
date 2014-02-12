@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProfilerSession Type="ExecutionPerformanceAnalysis" Name="Lights Out1903121187">
+  <TargetApplication Name="Lights_Out" SourceProject="Lights Out.csproj" Type="WindowsPhone71">
+    <ApplicationBinary Path="Bin\Release\Lights_Out.xap" Timestamp="03/02/2014 22.31.24" />
+    <ApplicationIconPath Path="" />
+    <SymbolPaths>
+      <Path Value="Bin\Release\" />
+    </SymbolPaths>
+  </TargetApplication>
+  <Settings>
+    <Probe Name="Visual">
+      <CollectElementLevelCosting Enabled="True" />
+      <CollectSnapshots Enabled="True" Interval="1000" Resampling="2" />
+      <CollectMediaEvents Enabled="True" />
+      <CollectCacheDetails Enabled="True" />
+    </Probe>
+    <Probe Name="Code">
+      <SampleCallStack Enabled="True" Depth="4294967295" Interval="10" />
+      <CollectPerformanceCounters Enabled="True" />
+    </Probe>
+    <Probe Name="Memory">
+      <MemoryCallStack Enabled="False" Depth="4294967295" />
+      <ObjectTree Enabled="False" Interval="10" />
+    </Probe>
+  </Settings>
+  <Data>
+    <Logs>
+      <File Type="NativeFormat" Path="PerfLogs\Lights Out1903121187\tmpF3C0.spl" />
+      <File Type="SRUMData" Path="PerfLogs\Lights Out1903121187\tmpF3C1.srum" />
+    </Logs>
+  </Data>
+  <TargetDeviceSettings OSVersion="8.0.9903" AvailablePhysicalMemoryAtStartup="0" ProcessorArchitectureType="Intel" ProcessorInformation="X86" IsEmulator="True" />
+</ProfilerSession>

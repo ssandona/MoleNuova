@@ -159,15 +159,7 @@
             </Border>
         </Popup>
 
-        <MediaElement 
-    x:Name="mole_sound" 
-    Source="Sounds/pop.mp3" 
-    AutoPlay="False" />
 
-        <MediaElement 
-    x:Name="win_sound" 
-    Source="Sounds/win.mp3" 
-    AutoPlay="False"  />
         <!-- CAMPO DI GIOCO-->
         <StackPanel Grid.Row="1">
             

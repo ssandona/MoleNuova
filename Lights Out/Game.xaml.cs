@@ -10,44 +10,96 @@ using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Lights_Out.ViewModel;
+using System.IO.IsolatedStorage;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+
 
 namespace Lights_Out
 {
-    ///CLASS: classe parziale che viene fusa con lo xaml parsato
+    //CLASS: classe parziale che viene fusa con lo xaml parsato
     public partial class Game : PhoneApplicationPage
     {
-        /// COSTRUTTORE
+
+        private IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
+
+        // COSTRUTTORE
         public Game()
         {
             InitializeComponent();
         }
 
-        /// METODO: durante il passaggio alla pagina con id x caricami i dati del livello con id x e setta il DataContext
+
+
+    private void PlaySound(string path)
+    {
+        if (!string.IsNullOrEmpty(path))
+        {
+            using (var stream = TitleContainer.OpenStream(path))
+            {
+                if (stream != null)
+                {
+                var effect = SoundEffect.FromStream(stream);
+                FrameworkDispatcher.Update();
+                effect.Play();
+                }
+            }
+        }
+    }
+
+    static Stream popstream = TitleContainer.OpenStream("Sounds/pop.wav");
+    static Stream winstream = TitleContainer.OpenStream("Sounds/win.wav");
+    static SoundEffect pop = SoundEffect.FromStream(popstream);
+    static SoundEffect win = SoundEffect.FromStream(winstream);
+    static SoundEffectInstance popSound = pop.CreateInstance();
+    static SoundEffectInstance winSound = win.CreateInstance();
+
+        // METODO: durante il passaggio alla pagina con id x caricami i dati del livello con id x e setta il DataContext
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
             string liv = string.Empty;
             
-            /// IF: riesco a prendere il livello sul quale sto navigando
+            // IF: riesco a prendere il livello sul quale sto navigando
             if (NavigationContext.QueryString.TryGetValue("id", out liv))
             {
-                /// converti la stringa dell id del livello in intero
+                // converti la stringa dell id del livello in intero
                 int a = Convert.ToInt32(liv);
 
-                /// crea un nuovo DataContext con il LivelloVM(id) per il binding
+                // crea un nuovo DataContext con il LivelloVM(id) per il binding
                 this.DataContext = new LivelloVM(a);
                 LivelloVM vm = (LivelloVM)this.DataContext;
+                bool audio = false;
 
-                ///associo all'evento PlaySounds il play dei vari media elements
+                if (appSettings.Contains("audio"))
+                {
+                    audio = (bool)appSettings["audio"];
+                }
+                else
+                {
+                    appSettings.Add("audio", false);
+                }
+
+                //associo all'evento PlaySounds il play dei vari media elements
                 vm.PlayMoleSound += (sender, ev) =>
                 {
-                    this.mole_sound.Play();
+                    if (audio)
+                    {
+                        FrameworkDispatcher.Update();
+                        popSound.Play();
+                    }
                 };
 
                 vm.PlayVittoriaSound += (sender, ev) =>
                 {
-                    this.win_sound.Play();
+                    if (audio)
+                    {
+                        FrameworkDispatcher.Update();
+                        winSound.Play();
+                    }
                 };
             }
 

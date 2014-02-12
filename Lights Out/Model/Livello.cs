@@ -266,7 +266,7 @@ namespace PhoneApp1
                 else lista.Add(false);
             }
             return lista;
-
+            
         }
 
         /// METODO: ritorna la configurazione del livello come una stringa di 110110 

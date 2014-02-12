@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{95efbfa1-9522-40c3-a590-43af7c9ab317}" Title="Mole Out" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="No1" Description="Il gioco delle talpe, simpatico rompicapo per tutte le età, con 20 livelli." Publisher="No1">
+  <App xmlns="" ProductID="{95efbfa1-9522-40c3-a590-43af7c9ab317}" Title="Mole Out" RuntimeType="Silverlight" Version="1.0.0.1" Genre="apps.normal" Author="No1" Description="Il gioco delle talpe, simpatico rompicapo per tutte le età, con 20 livelli." Publisher="No1">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
